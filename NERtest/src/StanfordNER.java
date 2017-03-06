@@ -6,9 +6,13 @@ import java.util.LinkedHashSet;
 import java.util.List;
 
 /**
- * Standford Named Entity Demo
- * @author Ganesh
+ *------------------------------|
+ * Standford Named Entity Demo  |
+ * @author Ganesh               |
+ *------------------------------|
+ *modified by Jiuzhou Wu, Haolong Zhang
  */
+
 public class StanfordNER
 {
  /**
@@ -60,7 +64,9 @@ public class StanfordNER
  + " 50,000 runs in all recognized cricket "
  + " First-class, List A and Twenty20 combined)";
  
- System.out.println(identifyNER(content, "D:\\data\\model\\english.conll.4class.distsim.crf.ser.gz").toString());
+ // Here we can change the Classifier files to check different ClassLevel(3,4,7)
+ // Note that I already put all classifier files into the folder lib\classifiers
+ System.out.println(identifyNER(content, "lib\\classifiers\\english.muc.7class.distsim.crf.ser.gz").toString());
  }
  
 }
