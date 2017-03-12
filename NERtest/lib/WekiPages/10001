@@ -1,0 +1,41 @@
+  <page>
+    <title>Marbury v. Madison</title>
+    <ns>0</ns>
+    <id>20715</id>
+    <revision>
+      <id>750136157</id>
+      <parentid>750135930</parentid>
+      <timestamp>2016-11-18T00:55:05Z</timestamp>
+      <contributor>
+        <username>Iazyges</username>
+        <id>23299921</id>
+      </contributor>
+      <comment>/* Decision */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">{{pp-semi-indef}}
+{{Infobox SCOTUS case
+| Litigants=Marbury v. Madison
+| ArgueDate=February 11
+| ArgueYear=1803
+| DecideDate=February 24
+| DecideYear=1803
+| FullName=William Marbury v. James Madison, Secretary of State of the United States
+| USVol=5
+| USPage=137
+| Citation=1 Cranch 137; 2 L. Ed. 60; 1803 U.S. LEXIS 352
+| Prior=Original action filed in U.S. Supreme Court; order to show cause why writ of mandamus should not issue, December 1801
+| Subsequent=None
+| Holding=Section 13 of the Judiciary Act of 1789 is unconstitutional to the extent it purports to enlarge the original jurisdiction of the Supreme Court beyond that permitted by the Constitution. Congress cannot pass laws that are contrary to the Constitution, and it is the role of the Judicial system to interpret what the Constitution permits.
+| SCOTUS=1801-1804
+| Majority=Marshall
+| JoinMajority=Paterson, Chase, Washington
+| NotParticipating=Cushing and Moore
+| LawsApplied=[[Article One of the United States Constitution|U.S. Const. arts. I]], [[Article Three of the United States Constitution|III]]; [[Judiciary Act of 1789]] § 13
+}}
+
+'''''Marbury v. Madison''''', {{ussc|5|137|1803}}, was a [[list of landmark court decisions in the United States|landmark]] [[Supreme Court of the United States|United States Supreme Court]] case in which the Court formed the basis for the exercise of [[judicial review in the United States]] under [[Article Three of the United States Constitution|Article III]] of the [[United States Constitution|Constitution]]. The landmark decision helped define the boundary between the [[Separation of Powers|constitutionally separate]] [[Executive (government)|executive]] and [[Judiciary|judicial]] branches of the [[Federal government of the United States|American form of government]].
+
+The case resulted from a petition to the [[Supreme Court of the United States|Supreme Court]] by [[William Marbury]], who had been appointed [[Justice of the Peace]] in the [[Washington, D.C.|District of Columbia]] by President [[John Adams]] but whose [[Letters patent|commission]] was not subsequently delivered. Marbury petitioned the Supreme Court to force the new Secretary of State, [[James Madison]], to deliver the documents. The Court, with [[John Marshall]] as Chief Justice, found firstly that Madison's refusal to deliver the commission was both illegal and correctible. Nonetheless, the Court stopped short of ordering Madison (by writ of ''[[mandamus]]'') to hand over Marbury's commission, instead holding that the provision of the [[Judiciary Act of 1789]] that enabled Marbury to bring his claim to the Supreme Court was itself unconstitutional, since it purported to extend the Court's [[original jurisdiction]] beyond that which Article III established. The petition was therefore denied.
+
+
