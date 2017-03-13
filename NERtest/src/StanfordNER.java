@@ -59,15 +59,15 @@ public class StanfordNER
 		 return map;
 	}
 	 
-public static ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> identify(String[] text,String model){
+public static ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> identify(List<String> text,String model){
 		 
 		 ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map =new ArrayList<LinkedHashMap<String,LinkedHashSet<String>>>();
 		 String serializedClassifier =model;
 		 System.out.println(serializedClassifier);
 		 System.out.println("-----------check check-------------");
 		 CRFClassifier<CoreLabel> classifier = CRFClassifier.getClassifierNoExceptions(serializedClassifier);
-		 for(int i=0;i<text.length;i++){
-			 List<List<CoreLabel>> classify = classifier.classify(text[i]);
+		 for(int i=0;i<text.size();i++){
+			 List<List<CoreLabel>> classify = classifier.classify(text.get(i));
 			 LinkedHashMap<String,LinkedHashSet<String>> cell = new LinkedHashMap<String,LinkedHashSet<String>>();
 			 for (List<CoreLabel> coreLabels : classify){
 				 for (CoreLabel coreLabel : coreLabels){
@@ -94,18 +94,18 @@ public static ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> identify(St
 		 return map;
 	}
 	
-	public static String toString(ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map, String[] content){
-		String s = "[ +\n" ;
+	public static List<String> toString(ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map, List<String> content){
+		List<String> s = new ArrayList<String>();
 		for(int i=0;i<map.size();i++){
 			LinkedHashMap<String,LinkedHashSet<String>> cur = map.get(i);
 			if(cur.isEmpty()){
-				s = s +"{{Class}" + content[i] + "} \n";
+				s.add("{{Class}" + content.get(i) + "} \n");
 			}
 			else{
-				s = s + "{" + cur.toString() + content[i] + "} \n";
+				s.add("{" + cur.toString() + content.get(i) + "} \n");
 			}
 		}
-		return s = s + "]";
+		return s;
 	}
 	 
 	//Test case for using NER
