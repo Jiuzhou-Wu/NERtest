@@ -17,7 +17,9 @@ public class CallNER {
 		        if (Files.isRegularFile(filePath)) {
 		            try {
 						List<String> s = Files.readAllLines(filePath);
-						content.add(s.get(1));
+						String title = s.get(1);
+						title = title.substring(11, title.length()-8);
+						content.add(title);
 						//System.out.println(s.get(1));
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
@@ -38,17 +40,18 @@ public class CallNER {
 		content[1]="I am a scientist";
 		*/
 		String model = "lib\\classifiers\\english.muc.7class.distsim.crf.ser.gz";
-		String model2 = "lib\\classifiers\\english.conll.4class.distsim.crf.ser.gz";
-		String model3 = "lib\\classifiers\\english.all.3class.distsim.crf.ser.gz";
+		//String model2 = "lib\\classifiers\\english.conll.4class.distsim.crf.ser.gz";
+		//String model3 = "lib\\classifiers\\english.all.3class.distsim.crf.ser.gz";
 		//System.out.println(ner.toString(ner.identify(content, model),content));
 		
 		//List<String> lines = Arrays.asList("The first line", "The second line");
-		Path file = Paths.get("lib\\Result\\7ClassRes.txt");
+		Path file = Paths.get("lib\\Result\\Res.arff");
 		Files.write(file, ner.toString(ner.identify(content, model),content), Charset.forName("UTF-8"));
-		Path file2 = Paths.get("lib\\Result\\4ClassRes.txt");
-		Files.write(file2, ner.toString(ner.identify(content, model2),content), Charset.forName("UTF-8"));
-		Path file3 = Paths.get("lib\\Result\\3ClassRes.txt");
-		Files.write(file3, ner.toString(ner.identify(content, model3),content), Charset.forName("UTF-8"));
+		//Path file2 = Paths.get("lib\\Result\\4ClassRes.txt");
+		//Files.write(file2, ner.toString(ner.identify(content, model2),content), Charset.forName("UTF-8"));
+		//Path file3 = Paths.get("lib\\Result\\3ClassRes.txt");
+		//Files.write(file3, ner.toString(ner.identify(content, model3),content), Charset.forName("UTF-8"));
+		
 		
 	}
 }

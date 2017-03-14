@@ -59,7 +59,7 @@ public class StanfordNER
 		 return map;
 	}
 	 
-public static ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> identify(List<String> text,String model){
+	 public static ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> identify(List<String> text,String model){
 		 
 		 ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map =new ArrayList<LinkedHashMap<String,LinkedHashSet<String>>>();
 		 String serializedClassifier =model;
@@ -94,16 +94,132 @@ public static ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> identify(Li
 		 return map;
 	}
 	
+	public static ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> capitalization(List<String> text,ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map){
+		for(int i=0; i<text.size();i++){
+			boolean flag = capCheck(text.get(i));
+			if(flag){
+				LinkedHashMap<String,LinkedHashSet<String>> cell = new LinkedHashMap<String,LinkedHashSet<String>>();
+				LinkedHashSet<String> temp=new LinkedHashSet<String>();
+				temp.add("true");
+				cell.put("CAPITALIZATION", temp);
+				map.add(i, cell);
+			}
+		}
+		return map;
+	}
+	
+	public static boolean capCheck(String text){
+		String[] words = text.split("\\s+");
+		for (int i = 0; i < words.length; i++) {
+		    // You may want to check for a non-word character before blindly
+		    // performing a replacement
+		    // It may also be necessary to adjust the character class
+		    words[i] = words[i].replaceAll("[^\\w]", "");
+		    if(!words[i].equals("")&&!Character.isUpperCase(words[i].charAt(0))){
+		    	if(!words[i].equals("the")&&!words[i].equals("of")&&!words[i].equals("de")){
+		    		return false;
+		    	}
+		    }
+		}
+		if(words.length>1){
+			return true;
+		}
+		else{
+			return false;
+		}
+		
+	}
+	
 	public static List<String> toString(ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map, List<String> content){
+		map = capitalization(content,map);
 		List<String> s = new ArrayList<String>();
-		for(int i=0;i<map.size();i++){
+		s.add("@relation wekipagesClassify\n");
+		s.add("@attribute title string");
+		s.add("@attribute location numeric");
+		s.add("@attribute person numeric");
+		s.add("@attribute organization numeric");
+		s.add("@attribute money numeric");
+		s.add("@attribute percent numeric");
+		s.add("@attribute date numeric");
+		s.add("@attribute time numeric");
+		s.add("@attribute capitalization numeric");
+		s.add("@attribute class {Class, Instance}\n");
+		s.add("@data");
+		for(int i=0;i<content.size();i++){
 			LinkedHashMap<String,LinkedHashSet<String>> cur = map.get(i);
-			if(cur.isEmpty()){
-				s.add("{{Class}" + content.get(i) + "} \n");
+			String nerFeatures = "'"+content.get(i).replaceAll("'", "\\\\'") + "',";
+			boolean flag = false;
+			if(cur.containsKey("LOCATION")){
+				nerFeatures = nerFeatures + "1,";
+				flag = true;
 			}
 			else{
-				s.add("{" + cur.toString() + content.get(i) + "} \n");
+				nerFeatures = nerFeatures + "0,";
 			}
+				
+			if(cur.containsKey("PERSON")){
+				nerFeatures = nerFeatures + "1,";
+				flag = true;
+			}
+			else{
+				nerFeatures = nerFeatures + "0,";
+			}
+				
+			if(cur.containsKey("ORGANIZATION")){
+				nerFeatures = nerFeatures + "1,";
+				flag = true;
+			}
+			else{
+				nerFeatures = nerFeatures + "0,";
+			}
+				
+			if(cur.containsKey("MONEY")){
+				nerFeatures = nerFeatures + "1,";
+				flag = true;
+			}
+			else{
+				nerFeatures = nerFeatures + "0,";
+			}
+			
+			if(cur.containsKey("PERCENT")){
+				nerFeatures = nerFeatures + "1,";
+				flag = true;
+			}
+			else{
+				nerFeatures = nerFeatures + "0,";
+			}
+				
+			if(cur.containsKey("DATE")){
+				nerFeatures = nerFeatures + "1,";
+				flag = true;
+			}
+			else{
+				nerFeatures = nerFeatures + "0,";
+			}
+			
+			if(cur.containsKey("TIME")){
+				nerFeatures = nerFeatures + "1,";
+				flag = true;
+			}
+			else{
+				nerFeatures = nerFeatures + "0,";
+			}
+				
+			if(cur.containsKey("CAPITALIZATION")){
+				nerFeatures = nerFeatures + "1,";
+				flag = true;
+			}
+			else{
+				nerFeatures = nerFeatures + "0,";
+			}
+			
+			if(flag){
+				nerFeatures = nerFeatures + "Instance";
+			}
+			else{
+				nerFeatures = nerFeatures + "Class";
+			}
+			s.add(nerFeatures);
 		}
 		return s;
 	}
