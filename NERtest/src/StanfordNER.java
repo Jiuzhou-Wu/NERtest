@@ -68,6 +68,7 @@ public class StanfordNER
 		 CRFClassifier<CoreLabel> classifier = CRFClassifier.getClassifierNoExceptions(serializedClassifier);
 		 for(int i=0;i<text.size();i++){
 			 List<List<CoreLabel>> classify = classifier.classify(text.get(i));
+			 
 			 LinkedHashMap<String,LinkedHashSet<String>> cell = new LinkedHashMap<String,LinkedHashSet<String>>();
 			 for (List<CoreLabel> coreLabels : classify){
 				 for (CoreLabel coreLabel : coreLabels){
@@ -134,7 +135,7 @@ public class StanfordNER
 		map = capitalization(content,map);
 		List<String> s = new ArrayList<String>();
 		s.add("@relation wekipagesClassify\n");
-		s.add("@attribute title string");
+		//s.add("@attribute title string");
 		s.add("@attribute location numeric");
 		s.add("@attribute person numeric");
 		s.add("@attribute organization numeric");
@@ -147,7 +148,8 @@ public class StanfordNER
 		s.add("@data");
 		for(int i=0;i<content.size();i++){
 			LinkedHashMap<String,LinkedHashSet<String>> cur = map.get(i);
-			String nerFeatures = "'"+content.get(i).replaceAll("'", "\\\\'") + "',";
+			//String nerFeatures = "'"+content.get(i).replaceAll("'", "\\\\'") + "',";
+			String nerFeatures = "";
 			boolean flag = false;
 			if(cur.containsKey("LOCATION")){
 				nerFeatures = nerFeatures + "1,";
