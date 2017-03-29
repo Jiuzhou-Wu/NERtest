@@ -7,12 +7,15 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
+import edu.stanford.nlp.tagger.maxent.MaxentTagger;
+
 
 public class CallNER {
 
 	public static void main(String[] args) throws IOException{
 		List<String> content = new ArrayList<String>();
-		try(Stream<Path> paths = Files.walk(Paths.get("lib\\WekiPages"))) {
+		
+		try(Stream<Path> paths = Files.walk(Paths.get("lib\\Test"))) {
 		    paths.forEach(filePath -> {
 		        if (Files.isRegularFile(filePath)) {
 		            try {
@@ -29,29 +32,43 @@ public class CallNER {
 		    });
 		}
 		
+		List<String> plural = new ArrayList<String>();
+    	plural = checkPlural(content);
+		
+    	System.out.println(plural.toString());
+    	
 		StanfordNER ner = new StanfordNER();
-		/*
-		String[] content = new String[2]; 
-		content[0]="Sachin Ramesh Tendulkar (Listeni/ˌsətʃɪn tɛnˈduːlkər/; Marathi: "
-				+ " सचिन रमेश तेंडुलकर; born 24 April 1973) is an Indian former cricketer widely "
-				+ " acknowledged as the greatest batsman of the modern generation, popularly holds the title \"God of Cricket\" among his fans [2] He is also acknowledged as the greatest cricketer of all time.[6][7][8][9] He took up cricket at the age of eleven, made his Test debut against Pakistan at the age of sixteen, and went on to represent Mumbai domestically and India internationally for close to twenty-four years. He is the only player to have scored one hundred international centuries, the first batsman to score a Double Century in a One Day International, and the only player to complete more than 30,000 runs in international cricket.[10] In October 2013, he became the 16th player and first Indian to aggregate "
-				+ " 50,000 runs in all recognized cricket "
-				+ " First-class, List A and Twenty20 combined)";
-		content[1]="I am a scientist";
-		*/
-		String model = "lib\\classifiers\\english.muc.7class.distsim.crf.ser.gz";
-		//String model2 = "lib\\classifiers\\english.conll.4class.distsim.crf.ser.gz";
-		//String model3 = "lib\\classifiers\\english.all.3class.distsim.crf.ser.gz";
-		//System.out.println(ner.toString(ner.identify(content, model),content));
+		String classifier = "lib\\classifiers\\english.muc.7class.distsim.crf.ser.gz";
 		
-		//List<String> lines = Arrays.asList("The first line", "The second line");
 		Path file = Paths.get("lib\\Result\\Res.arff");
-		Files.write(file, ner.toString(ner.identify(content, model),content), Charset.forName("UTF-8"));
-		//Path file2 = Paths.get("lib\\Result\\4ClassRes.txt");
-		//Files.write(file2, ner.toString(ner.identify(content, model2),content), Charset.forName("UTF-8"));
-		//Path file3 = Paths.get("lib\\Result\\3ClassRes.txt");
-		//Files.write(file3, ner.toString(ner.identify(content, model3),content), Charset.forName("UTF-8"));
+		Files.write(file, ner.toString(ner.identify(content, classifier),content), Charset.forName("UTF-8"));
+	}
+	
+	public static List<String> checkPlural(List<String> content){
+		List<String> res = new ArrayList<String>();
 		
-		
+		String model = "lib\\models\\english-bidirectional-distsim.tagger";
+    	MaxentTagger tagger = new MaxentTagger(model);
+    	String temp;
+    	for(int i=0;i<content.size();i++){
+    		temp = content.get(i);
+    		boolean flag = false;
+    		String[] words = temp.split("\\s+");
+    		for (int j = 0; j < words.length; j++) {
+    		    words[j] = words[j].replaceAll("[^\\w]", "");
+    		    temp = tagger.tagTokenizedString(words[j]).substring(words[j].length()+1, tagger.tagTokenizedString(words[j]).length()-1);
+    		    if(temp.equals("NNS")|| temp.equals("NNPS")){
+    		    	flag = true;
+    		    }
+    		}
+    		if(flag){
+    			res.add("plural");
+    		}
+    		else{
+    			res.add("singular");
+    		}
+    	}
+    	
+		return res;
 	}
 }
