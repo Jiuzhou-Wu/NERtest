@@ -132,7 +132,7 @@ public class StanfordNER
 		
 	}
 	
-	public static List<String> toString(ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map, List<String> content){
+	public static List<String> toString(ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map, List<String> content, List<String> plural){
 		map = capitalization(content,map);
 		List<String> s = new ArrayList<String>();
 		s.add("@relation wekipagesClassify\n");
@@ -145,7 +145,10 @@ public class StanfordNER
 		s.add("@attribute date numeric");
 		s.add("@attribute time numeric");
 		s.add("@attribute capitalization numeric");
+		s.add("@attribute plural");
+		s.add("@attribute titleStructure");
 		s.add("@attribute class {Class, Instance}\n");
+		
 		s.add("@data");
 		for(int i=0;i<content.size();i++){
 			LinkedHashMap<String,LinkedHashSet<String>> cur = map.get(i);
@@ -213,6 +216,22 @@ public class StanfordNER
 				flag = true;
 			}
 			else{
+				nerFeatures = nerFeatures + "0,";
+			}
+			
+			if(plural.get(i).contains("singular")){
+				nerFeatures = nerFeatures + "0,";
+				//flag = true;
+			}
+			else if(plural.get(i).contains("plural")){
+				nerFeatures = nerFeatures + "1,";
+			}
+			
+			if(plural.get(i).contains("structure")){
+				flag= true;
+				nerFeatures = nerFeatures + "1,";
+			}
+			else if(plural.get(i).contains("noStr")){
 				nerFeatures = nerFeatures + "0,";
 			}
 			
