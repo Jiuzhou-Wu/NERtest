@@ -19,7 +19,7 @@ public class DbpediaData
 {
     static public void main(String[] argv) throws IOException
     {
-    	
+    	int size = 500;
     	List<String> content = new ArrayList<String>();
     	try(Stream<Path> paths = Files.walk(Paths.get("lib/wiki page"))) {
 		    paths.forEach(filePath -> {
@@ -41,22 +41,27 @@ public class DbpediaData
 		    });
 		}
     	System.out.println("get data from ontology");
-    	
-    	for(int i = 0; i < Math.min(500, content.size()); i++){
+    	int numOfClass = 0;
+    	for(int i = 0; i < Math.min(size, content.size()); i++){
     		
     		String title = content.get(i);
     		
     		String result = DbData(title);
+    		title = title.replaceAll("_", " ");
 //    		System.out.println(result);
-    		File file = new File("lib/ClassData/" + (i+500));
-    		file.createNewFile();
+    		
       	    if(result == "instance"){
+      	    	File file = new File("lib/data/" + (i+501- numOfClass));
+        		file.createNewFile();
       	    	BufferedWriter fw = new BufferedWriter(new FileWriter(file.getAbsoluteFile(), true));
             	fw.write("\n");
     			fw.write(title);
     			fw.write("\n");
             	fw.write("instance");
             	fw.close();
+      	    } else {
+      	    	numOfClass ++ ;
+      	    	size++;
       	    }
       	    
         	
@@ -149,7 +154,7 @@ public class DbpediaData
             	for(int i = 0; i < Math.min(size, strArrayResult.length); i++){
             		System.out.println(strArrayResult[i]);
             		if(strArrayResult[i].contains("\"")){
-            			File file = new File("lib/ClassData/" + (i-2));
+            			File file = new File("lib/data/" + (i-2));
             			if (file.createNewFile()){
             			 //created
             			} else {
