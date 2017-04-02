@@ -145,8 +145,8 @@ public class StanfordNER
 		s.add("@attribute date numeric");
 		s.add("@attribute time numeric");
 		s.add("@attribute capitalization numeric");
-		s.add("@attribute plural");
-		s.add("@attribute titleStructure");
+		s.add("@attribute plural numeric");
+		s.add("@attribute titlestructure numeric");
 		s.add("@attribute class {Class, Instance}\n");
 		
 		s.add("@data");

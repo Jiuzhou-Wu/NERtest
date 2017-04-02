@@ -8,8 +8,8 @@
 @attribute date numeric
 @attribute time numeric
 @attribute capitalization numeric
-@attribute plural
-@attribute titleStructure
+@attribute plural numeric
+@attribute titleStructure numeric
 @attribute class {Class, Instance}
 
 @data
