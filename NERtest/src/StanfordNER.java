@@ -152,8 +152,8 @@ public class StanfordNER
 		s.add("@data");
 		for(int i=0;i<content.size();i++){
 			LinkedHashMap<String,LinkedHashSet<String>> cur = map.get(i);
-			String nerFeatures = "'"+content.get(i).replaceAll("'", "\\\\'") + "',";
-			//String nerFeatures = "";
+			//String nerFeatures = "'"+content.get(i).replaceAll("'", "\\\\'") + "',";
+			String nerFeatures = "";
 			//boolean flag = false;
 			if(cur.containsKey("LOCATION")){
 				nerFeatures = nerFeatures + "1,";
