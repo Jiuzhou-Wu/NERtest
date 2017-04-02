@@ -132,7 +132,7 @@ public class StanfordNER
 		
 	}
 	
-	public static List<String> toString(ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map, List<String> content, List<String> plural){
+	public static List<String> toString(ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map, List<String> content, List<String> plural, List<String> type){
 		map = capitalization(content,map);
 		List<String> s = new ArrayList<String>();
 		s.add("@relation wekipagesClassify\n");
@@ -152,12 +152,12 @@ public class StanfordNER
 		s.add("@data");
 		for(int i=0;i<content.size();i++){
 			LinkedHashMap<String,LinkedHashSet<String>> cur = map.get(i);
-			//String nerFeatures = "'"+content.get(i).replaceAll("'", "\\\\'") + "',";
-			String nerFeatures = "";
-			boolean flag = false;
+			String nerFeatures = "'"+content.get(i).replaceAll("'", "\\\\'") + "',";
+			//String nerFeatures = "";
+			//boolean flag = false;
 			if(cur.containsKey("LOCATION")){
 				nerFeatures = nerFeatures + "1,";
-				flag = true;
+				//flag = true;
 			}
 			else{
 				nerFeatures = nerFeatures + "0,";
@@ -165,7 +165,7 @@ public class StanfordNER
 				
 			if(cur.containsKey("PERSON")){
 				nerFeatures = nerFeatures + "1,";
-				flag = true;
+				//flag = true;
 			}
 			else{
 				nerFeatures = nerFeatures + "0,";
@@ -173,7 +173,7 @@ public class StanfordNER
 				
 			if(cur.containsKey("ORGANIZATION")){
 				nerFeatures = nerFeatures + "1,";
-				flag = true;
+				//flag = true;
 			}
 			else{
 				nerFeatures = nerFeatures + "0,";
@@ -181,7 +181,7 @@ public class StanfordNER
 				
 			if(cur.containsKey("MONEY")){
 				nerFeatures = nerFeatures + "1,";
-				flag = true;
+				//flag = true;
 			}
 			else{
 				nerFeatures = nerFeatures + "0,";
@@ -189,7 +189,7 @@ public class StanfordNER
 			
 			if(cur.containsKey("PERCENT")){
 				nerFeatures = nerFeatures + "1,";
-				flag = true;
+				//flag = true;
 			}
 			else{
 				nerFeatures = nerFeatures + "0,";
@@ -197,7 +197,7 @@ public class StanfordNER
 				
 			if(cur.containsKey("DATE")){
 				nerFeatures = nerFeatures + "1,";
-				flag = true;
+				//flag = true;
 			}
 			else{
 				nerFeatures = nerFeatures + "0,";
@@ -205,7 +205,7 @@ public class StanfordNER
 			
 			if(cur.containsKey("TIME")){
 				nerFeatures = nerFeatures + "1,";
-				flag = true;
+				//flag = true;
 			}
 			else{
 				nerFeatures = nerFeatures + "0,";
@@ -213,7 +213,7 @@ public class StanfordNER
 				
 			if(cur.containsKey("CAPITALIZATION")){
 				nerFeatures = nerFeatures + "1,";
-				flag = true;
+				//flag = true;
 			}
 			else{
 				nerFeatures = nerFeatures + "0,";
@@ -228,19 +228,22 @@ public class StanfordNER
 			}
 			
 			if(plural.get(i).contains("structure")){
-				flag= true;
+				//flag= true;
 				nerFeatures = nerFeatures + "1,";
 			}
 			else if(plural.get(i).contains("noStr")){
 				nerFeatures = nerFeatures + "0,";
 			}
 			
+			nerFeatures = nerFeatures + type.get(i);
+			/*
 			if(flag){
 				nerFeatures = nerFeatures + "Instance";
 			}
 			else{
 				nerFeatures = nerFeatures + "Class";
-			}
+			}*/
+			
 			s.add(nerFeatures);
 		}
 		return s;
