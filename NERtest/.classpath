@@ -3,5 +3,33 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="lib/stanford-corenlp-3.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/collection-0.6.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/commons-cli-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/commons-csv-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/commons-io-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/httpclient-cache-4.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/httpcore-4.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/jackson-annotations-2.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/jackson-core-2.7.4.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/jackson-databind-2.7.4.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/jcl-over-slf4j-1.7.21.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/jena-arq-3.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/jena-base-3.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/jena-cmds-3.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/jena-core-3.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/jena-iri-3.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/jena-rdfconnection-3.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/jena-shaded-guava-3.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/jena-tdb-3.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/jsonld-java-0.9.0.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/libthrift-0.9.3.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/slf4j-api-1.7.21.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/slf4j-log4j12-1.7.21.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/xercesImpl-2.11.0.jar"/>
+	<classpathentry kind="lib" path="lib/ApacheJena/xml-apis-1.4.01.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
