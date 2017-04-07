@@ -19,54 +19,54 @@ public class DbpediaData
 {
     static public void main(String[] argv) throws IOException
     {
-    	int size = 500;
-    	List<String> content = new ArrayList<String>();
-    	try(Stream<Path> paths = Files.walk(Paths.get("lib/wiki page"))) {
-		    paths.forEach(filePath -> {
-		        if (Files.isRegularFile(filePath)) {
-		            try {
-						List<String> s = Files.readAllLines(filePath);
-						String title = s.get(1);
-						title = title.substring(11, title.length()-8);
-						title = title.replaceAll(" ", "_");
-//						title = title.toLowerCase();
-						content.add(title);
-//						System.out.println(title);
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-//						System.out.println(title);
-						e.printStackTrace();
-					}
-		        }
-		    });
-		}
-    	System.out.println("get data from ontology");
-    	int numOfClass = 0;
-    	for(int i = 0; i < Math.min(size, content.size()); i++){
-    		
-    		String title = content.get(i);
-    		
-    		String result = DbData(title);
-    		title = title.replaceAll("_", " ");
-//    		System.out.println(result);
-    		
-      	    if(result == "instance"){
-      	    	File file = new File("lib/data/" + (i+501- numOfClass));
-        		file.createNewFile();
-      	    	BufferedWriter fw = new BufferedWriter(new FileWriter(file.getAbsoluteFile(), true));
-            	fw.write("\n");
-    			fw.write(title);
-    			fw.write("\n");
-            	fw.write("instance");
-            	fw.close();
-      	    } else {
-      	    	numOfClass ++ ;
-      	    	size++;
-      	    }
-      	    
-        	
-    	}
-//    	DBontology(1000);
+//    	int size = 500;
+//    	List<String> content = new ArrayList<String>();
+//    	try(Stream<Path> paths = Files.walk(Paths.get("lib/wiki page"))) {
+//		    paths.forEach(filePath -> {
+//		        if (Files.isRegularFile(filePath)) {
+//		            try {
+//						List<String> s = Files.readAllLines(filePath);
+//						String title = s.get(1);
+//						title = title.substring(11, title.length()-8);
+//						title = title.replaceAll(" ", "_");
+////						title = title.toLowerCase();
+//						content.add(title);
+////						System.out.println(title);
+//					} catch (Exception e) {
+//						// TODO Auto-generated catch block
+////						System.out.println(title);
+//						e.printStackTrace();
+//					}
+//		        }
+//		    });
+//		}
+//    	System.out.println("get data from ontology");
+//    	int numOfClass = 0;
+//    	for(int i = 0; i < Math.min(size, content.size()); i++){
+//    		
+//    		String title = content.get(i);
+//    		
+//    		String result = DbData(title);
+//    		title = title.replaceAll("_", " ");
+////    		System.out.println(result);
+//    		
+//      	    if(result == "instance"){
+//      	    	File file = new File("lib/data/" + (i+501- numOfClass));
+//        		file.createNewFile();
+//      	    	BufferedWriter fw = new BufferedWriter(new FileWriter(file.getAbsoluteFile(), true));
+//            	fw.write("\n");
+//    			fw.write(title);
+//    			fw.write("\n");
+//            	fw.write("instance");
+//            	fw.close();
+//      	    } else {
+//      	    	numOfClass ++ ;
+//      	    	size++;
+//      	    }
+//      	    
+//        	
+//    	}
+    	DBontology(1000);
     	
     	
     }
@@ -155,17 +155,20 @@ public class DbpediaData
             		System.out.println(strArrayResult[i]);
             		if(strArrayResult[i].contains("\"")){
             			File file = new File("lib/data/" + (i-2));
-            			if (file.createNewFile()){
-            			 //created
-            			} else {
-            			 //exists
-            			
-            			}
+            			file.createNewFile();
+//            			if (){
+//            			 //created
+//            			} else {
+//            			 //exists
+//            			
+//            			}
             			
             			strArrayResult[i] = strArrayResult[i].substring(strArrayResult[i].indexOf("\"")+1, strArrayResult[i].lastIndexOf("\""));
             			strArrayResult[i] = strArrayResult[i].replaceAll("_", " ");
+            			strArrayResult[i] = Character.toUpperCase(strArrayResult[i].charAt(0)) + strArrayResult[i].substring(1, strArrayResult[i].length());
             			BufferedWriter fw = new BufferedWriter(new FileWriter(file.getAbsoluteFile(), true));
             			fw.write("\n");
+//            			a = Character.toUpperCase(a.charAt(0)) + a.substring(1, a.length());
             			fw.write(strArrayResult[i]);
             			fw.write("\n");
                     	fw.write("class");

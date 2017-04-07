@@ -10,7 +10,7 @@
 @attribute capitalization numeric
 @attribute plural numeric
 @attribute titlestructure numeric
-@attribute class {Class, Instance}
+@attribute class {class, instance}
 
 @data
 0,0,0,0,0,0,0,0,0,0,class
