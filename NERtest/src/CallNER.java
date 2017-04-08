@@ -21,7 +21,7 @@ public class CallNER {
 		    paths.forEach(filePath -> {
 		        if (Files.isRegularFile(filePath)) {
 		            try {
-						List<String> s = Files.readAllLines(filePath, Charset.forName("ISO-8859-1"));
+						List<String> s = Files.readAllLines(filePath, Charset.forName("UTF-8"));
 						//System.out.println(filePath);
 						String title = s.get(1);
 						String type = s.get(2);
@@ -41,7 +41,7 @@ public class CallNER {
     	MaxentTagger tagger = new MaxentTagger(model);
 		
 		List<String> plural = new ArrayList<String>();
-    	plural = checkPlural(content, tagger);
+    	plural = checkStructure(content, tagger);
 		
 		StanfordNER ner = new StanfordNER();
 		String classifier = "lib\\classifiers\\english.muc.7class.distsim.crf.ser.gz";
@@ -49,45 +49,84 @@ public class CallNER {
 		Path file = Paths.get("lib\\Result\\Res.arff");
 		Files.write(file, ner.toString(ner.identify(content, classifier),content,plural,typeList), Charset.forName("UTF-8"));
 		
+		
 	}
 	
-	public static List<String> checkPlural(List<String> content, MaxentTagger tagger){
+	public static List<String> checkStructure(List<String> content, MaxentTagger tagger){
 		List<String> res = new ArrayList<String>();
     	String temp;
     	for(int i=0;i<content.size();i++){
     		temp = "";
-    		boolean flag = false;
-    		boolean structure = false;
+    		// flags for different structure features
+    		//below is the link for the tags list
+    		//https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
+    		boolean plural = false;
+    		boolean notAlph = false;
+    		boolean properNoun = false;
+    		
+    		
+    		// assign values for flags
     		temp = tagger.tagTokenizedString(content.get(i));
     		String[] words = temp.split("\\s+");
     		if(!StringUtils.isAlphanumeric(content.get(i))){
     			//System.out.println(content.get(i));
-    			structure = true;
+    			notAlph = true;
     		}
-    		for (int j = 0; j < words.length; j++) {
-    		    temp = words[j].substring(words[j].lastIndexOf("_")+1, words[j].length());
-    		    if(temp.equals("NNS")|| temp.equals("NNPS")){
-    		    	flag = true;
-    		    }
-    		    else if(temp.equals("VB")|| temp.equals("FW")|| temp.equals("CD")){
-    		    	structure = true;
-    		    }
-    		   
-    		}
-    		if(flag && structure){
-    			res.add("plural, structure");
-    		}
-    		else if(!flag && structure){
-    			res.add("singular, structure");
-    		}
-    		else if(flag && !structure){
-    			res.add("plural, noStr");
-    		}
-    		else{
-    			res.add("singular, noStr");
+    		else if(temp.contains("CD")){
+    			notAlph = true;
     		}
     		
-    			
+    		if(words.length == 1){
+    			temp = words[0].substring(words[0].lastIndexOf("_")+1, words[0].length());
+    			if(temp.equals("NNP")|| temp.equals("NNPS")){
+    				properNoun = true;
+    			}
+    		}
+    
+    		if(temp.contains("IN")){
+    			for (int j = 0; j < words.length-1; j++) {
+        		    temp = words[j+1].substring(words[j+1].lastIndexOf("_")+1, words[j+1].length());
+        		    if(temp.equals("IN")){
+        		    	temp = words[j].substring(words[j].lastIndexOf("_")+1, words[j].length());
+        		    	if(temp.equals("NNS")|| temp.equals("NNPS")){
+            		    	plural = true;
+            		    }
+        		    	break;
+        		    } 		   
+        		}
+    		}
+    		else{
+    			temp = words[words.length-1].substring(words[words.length-1].lastIndexOf("_")+1, words[words.length-1].length());
+    			if(temp.equals("NNS")|| temp.equals("NNPS")){
+    		    	plural = true;
+    		    }
+    		}
+    		
+    		
+    		
+    		//depends on flags
+    		//adding features true 1 false 0 for each
+    		String features = "";
+    		if(plural){
+    			features = features + "1,";
+    		}
+    		else{
+    			features = features + "0,";
+    		}
+    		if(notAlph){
+    			features = features + "1,";
+    		}
+    		else{
+    			features = features + "0,";
+    		}
+    		if(properNoun){
+    			features = features + "1,";
+    		}
+    		else{
+    			features = features + "0,";
+    		}
+    		
+    		res.add(features);
     	}
     	
 		return res;

@@ -1,7 +1,7 @@
 import edu.stanford.nlp.ie.crf.CRFClassifier;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
-
+import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -97,8 +97,11 @@ public class StanfordNER
 	}
 	
 	public static ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> capitalization(List<String> text,ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map){
+		System.out.println("-----------Cap check-----------");
+		String model = "lib\\models\\english-bidirectional-distsim.tagger";
+    	MaxentTagger tagger = new MaxentTagger(model);
 		for(int i=0; i<text.size();i++){
-			boolean flag = capCheck(text.get(i));
+			boolean flag = capCheck(text.get(i), tagger);
 			if(flag){
 				LinkedHashMap<String,LinkedHashSet<String>> cell = new LinkedHashMap<String,LinkedHashSet<String>>();
 				LinkedHashSet<String> temp=new LinkedHashSet<String>();
@@ -110,7 +113,7 @@ public class StanfordNER
 		return map;
 	}
 	
-	public static boolean capCheck(String text){
+	public static boolean capCheck(String text, MaxentTagger tagger){
 		String[] words = text.split("\\s+");
 		for (int i = 0; i < words.length; i++) {
 		    // You may want to check for a non-word character before blindly
@@ -118,11 +121,13 @@ public class StanfordNER
 		    // It may also be necessary to adjust the character class
 		    words[i] = words[i].replaceAll("[^\\w]", "");
 		    if(!words[i].equals("")&&!Character.isUpperCase(words[i].charAt(0))){
-		    	if(!words[i].equals("the")&&!words[i].equals("of")&&!words[i].equals("de")){
+		    	String type = tagger.tagTokenizedString(words[i]);
+		    	if(!type.contains("IN")){
 		    		return false;
 		    	}
 		    }
 		}
+		
 		if(words.length>1){
 			return true;
 		}
@@ -132,7 +137,7 @@ public class StanfordNER
 		
 	}
 	
-	public static List<String> toString(ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map, List<String> content, List<String> plural, List<String> type){
+	public static List<String> toString(ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map, List<String> content, List<String> titleStr, List<String> type){
 		map = capitalization(content,map);
 		List<String> s = new ArrayList<String>();
 		s.add("@relation wekipagesClassify\n");
@@ -146,8 +151,9 @@ public class StanfordNER
 		s.add("@attribute time numeric");
 		s.add("@attribute capitalization numeric");
 		s.add("@attribute plural numeric");
-		s.add("@attribute titlestructure numeric");
-		s.add("@attribute class {Class, Instance}\n");
+		s.add("@attribute notAlpha numeric");
+		s.add("@attribute properNoun numeric");
+		s.add("@attribute class {class, instance}\n");
 		
 		s.add("@data");
 		for(int i=0;i<content.size();i++){
@@ -219,21 +225,7 @@ public class StanfordNER
 				nerFeatures = nerFeatures + "0,";
 			}
 			
-			if(plural.get(i).contains("singular")){
-				nerFeatures = nerFeatures + "0,";
-				//flag = true;
-			}
-			else if(plural.get(i).contains("plural")){
-				nerFeatures = nerFeatures + "1,";
-			}
-			
-			if(plural.get(i).contains("structure")){
-				//flag= true;
-				nerFeatures = nerFeatures + "1,";
-			}
-			else if(plural.get(i).contains("noStr")){
-				nerFeatures = nerFeatures + "0,";
-			}
+			nerFeatures = nerFeatures + titleStr.get(i);
 			
 			nerFeatures = nerFeatures + type.get(i);
 			/*
