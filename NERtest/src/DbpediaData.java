@@ -66,7 +66,7 @@ public class DbpediaData
 //      	    
 //        	
 //    	}
-    	DBontology(1000);
+    	DbData(1000);
     	
     	
     }
@@ -127,9 +127,8 @@ public class DbpediaData
     }
     
     public static void DBontology(int size){
-    	
     	String prefix = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
-    			+ "PREFIX owl: <http://www.w3.org/2002/07/owl#>";;
+    			+ "PREFIX owl: <http://www.w3.org/2002/07/owl#>";
         String queryStr = prefix+"SELECT distinct (STR(?l) AS ?label) {   ?type a owl:Class;  rdfs:label  ?l .   FILTER (LANG(?l) = \"en\") filter( regex( str(?type), \"^http://dbpedia.org/ontology/\" ) )}";
         Query query = null;
         
@@ -189,27 +188,125 @@ public class DbpediaData
         return ;
     }
     
-    private static void fileWrite(String file, String context){
-//    	if(strArrayResult[i].contains("\"")){
-//			
-//			File file = new File("lib/data/ClassData/" + i);
-//        	
-//      	    if (file.createNewFile()){
-//      	    	
-//      	        System.out.println("File is created!");
-//      	    }else{
-//      	        System.out.println("File already exists.");
-//      	    }
-//      	    
-//			strArrayResult[i] = strArrayResult[i].substring(strArrayResult[i].indexOf("\"")+1, strArrayResult[i].lastIndexOf("\""));
-//			strArrayResult[i] = strArrayResult[i].replaceAll("_", " ");
-//			BufferedWriter fw = new BufferedWriter(new FileWriter(file.getAbsoluteFile(), true));
-//			fw.write("\n");
-//			fw.write(strArrayResult[i]);
-//        	fw.write("class");
-//        	fw.close();
-//		}else{
-//			i--;
-//		}
+    public static void DbData(int size){
+    	
+    	int counter = 1;
+    	
+    	String prefix = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
+    			+ "PREFIX owl: <http://www.w3.org/2002/07/owl#>";
+        String queryStr = prefix+"SELECT distinct ?type (STR(?l) AS ?label) {   ?type a owl:Class;  rdfs:label  ?l .   FILTER (LANG(?l) = \"en\") filter( regex( str(?type), \"^http://dbpedia.org/ontology/\" ) )}";
+        Query query = QueryFactory.create(queryStr);
+// Remote execution.
+        try ( QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query) ) {
+        	
+            // Set the DBpedia specific timeout.
+            ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
+            
+            // Execute.
+            ResultSet rs = qexec.execSelect();
+            
+            String textResult = "";
+            String[] strArrayResult;
+            
+            if( rs.hasNext()  ){
+            	textResult = ResultSetFormatter.asText(rs);
+//            	System.out.println(textResult);
+            	strArrayResult = textResult.split("\n");
+            	
+            	for(int i = 0; i < Math.min(size, strArrayResult.length); i++){
+//            		System.out.println(strArrayResult[i]);
+            		
+            		
+            		
+            		if(strArrayResult[i].contains("\"")){
+            			
+            			String postfix = strArrayResult[i].substring(31, strArrayResult[i].indexOf(">"));
+            			String label = DbDataHelper(postfix);
+            			if(label != ""){
+            				
+            				
+            				//write the class file
+            				File file = new File("lib/data/" + counter);
+                			file.createNewFile();
+                			
+                			strArrayResult[i] = strArrayResult[i].substring(strArrayResult[i].indexOf("\"")+1, strArrayResult[i].lastIndexOf("\""));
+                			strArrayResult[i] = strArrayResult[i].replaceAll("_", " ");
+                			strArrayResult[i] = Character.toUpperCase(strArrayResult[i].charAt(0)) + strArrayResult[i].substring(1, strArrayResult[i].length());
+                			BufferedWriter fw = new BufferedWriter(new FileWriter(file.getAbsoluteFile(), true));
+                			fw.write("\n");
+                			fw.write(strArrayResult[i]);
+                			fw.write("\n");
+                        	fw.write("class");
+                        	fw.close();
+                        	
+                        	//write the instance file
+                        	file = new File("lib/data/" + ++counter);
+                			file.createNewFile();
+                			fw = new BufferedWriter(new FileWriter(file.getAbsoluteFile(), true));
+                			fw.write("\n");
+                			fw.write(label);
+                			fw.write("\n");
+                        	fw.write("instance");
+                        	fw.close();
+                        	
+                        	//increment the counter
+                        	counter ++;
+            			}
+            			
+            			
+            			
+            		} else {
+            			size++;
+            		}
+        			
+            	}
+                
+            }
+        } catch (Exception e) {
+        	
+            e.printStackTrace();
+        }
+
+        System.out.println("Counter: " + --counter);
+        return ;
     }
+    
+    
+    private static String DbDataHelper(String uriPostfix){
+    	
+//    	System.out.println("we are at helper");
+    	
+    	String prefix = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
+    			+ "PREFIX owl: <http://www.w3.org/2002/07/owl#>"
+    			+ "PreFIX dbo: <http://dbpedia.org/ontology/>";
+        String queryStr = prefix+"select distinct ?instance (STR(?l) AS ?label) where {?instance a dbo:"
+        		+ uriPostfix
+        		+ "; rdfs:label  ?l . FILTER (LANG(?l) = \"en\")} LIMIT 1";
+        Query query = QueryFactory.create(queryStr);
+    	
+        try ( QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query) ) {
+        	 ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
+             
+             // Execute.
+             ResultSet rs = qexec.execSelect();
+             
+             String textResult = "";
+             String[] strArrayResult;
+             
+             if( rs.hasNext()  ){
+             	textResult = ResultSetFormatter.asText(rs);
+             	strArrayResult = textResult.split("\n");
+//             	System.out.println(strArrayResult[3].substring(strArrayResult[3].indexOf("\"")+1, strArrayResult[3].lastIndexOf("\"")));
+             	
+             	return strArrayResult[3].substring(strArrayResult[3].indexOf("\"")+1, strArrayResult[3].lastIndexOf("\""));
+             }
+        	
+        }catch(Exception e) {
+        	
+            e.printStackTrace();
+        }
+    	
+    	
+    	return "";
+    } 
 }
