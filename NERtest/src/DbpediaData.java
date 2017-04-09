@@ -71,6 +71,49 @@ public class DbpediaData
     	
     }
     
+    
+    
+    public static ArrayList<String> dbFeature(ArrayList<String> titles){
+    	ArrayList<String> resultList = new ArrayList<String>(titles.size());
+    	String totalCount = "0";
+    	for(int i = 0; i<resultList.size(); i++){
+    		
+    		String title = titles.get(i);
+    		
+    		String prefix = "PREFIX dbo: <http://dbpedia.org/ontology/>"
+    				+ "PREFIX dbr: <http://dbpedia.org/resource/>";
+    		String queryStr = prefix + "select ( count ( distinct ?Concept ) AS ?total ) where {?instance dbo:type dbr:"
+    				+ title
+    				+ "} LIMIT 100";
+    		Query query = QueryFactory.create(queryStr);
+    		try ( QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query) ) {
+                // Set the DBpedia specific timeout.
+                ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
+
+                // Execute.
+                ResultSet rs = qexec.execSelect();
+                if(rs.hasNext())
+                {
+                    totalCount=rs.next().get("total").toString();
+                }
+                resultList.add(i, totalCount);
+    		} catch (Exception e) {
+            	
+                e.printStackTrace();
+            }
+    		
+    	}
+    	
+    	
+    	
+    	
+    	return resultList;
+    }
+    
+    
+    
+    
+    
     /**
      * 
      * @param title
