@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.stream.Stream;
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
@@ -37,19 +39,18 @@ public class CallNER {
 		    });
 		}
 		
-		String model = "lib\\models\\english-bidirectional-distsim.tagger";
+		String model = "lib\\models\\wsj-0-18-bidirectional-nodistsim.tagger";
     	MaxentTagger tagger = new MaxentTagger(model);
-		
-		List<String> plural = new ArrayList<String>();
+    	
+    	List<String> plural = new ArrayList<String>();
     	plural = checkStructure(content, tagger);
-		
+    	
 		StanfordNER ner = new StanfordNER();
 		String classifier = "lib\\classifiers\\english.muc.7class.distsim.crf.ser.gz";
 		
 		Path file = Paths.get("lib\\Result\\Res.arff");
-		Files.write(file, ner.toString(ner.identify(content, classifier),content,plural,typeList), Charset.forName("UTF-8"));
-		
-		
+		ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map = ner.identify(content, classifier);
+		Files.write(file, ner.toString(map,content,plural,typeList), Charset.forName("UTF-8"));
 	}
 	
 	public static List<String> checkStructure(List<String> content, MaxentTagger tagger){
@@ -76,12 +77,12 @@ public class CallNER {
     			notAlph = true;
     		}
     		
-    		if(words.length == 1){
+    		/*if(words.length == 1){
     			temp = words[0].substring(words[0].lastIndexOf("_")+1, words[0].length());
     			if(temp.equals("NNP")|| temp.equals("NNPS")){
     				properNoun = true;
     			}
-    		}
+    		}*/
     
     		if(temp.contains("IN")){
     			for (int j = 0; j < words.length-1; j++) {

@@ -91,7 +91,7 @@ public class StanfordNER
 					 }
 				 }
 			 }
-			 map.add(cell);
+			 map.add(i,cell);
 		 }
 		 return map;
 	}
@@ -102,12 +102,12 @@ public class StanfordNER
     	MaxentTagger tagger = new MaxentTagger(model);
 		for(int i=0; i<text.size();i++){
 			boolean flag = capCheck(text.get(i), tagger);
+			LinkedHashMap<String,LinkedHashSet<String>> cell = new LinkedHashMap<String,LinkedHashSet<String>>();
+			cell = map.get(i);
 			if(flag){
-				LinkedHashMap<String,LinkedHashSet<String>> cell = new LinkedHashMap<String,LinkedHashSet<String>>();
 				LinkedHashSet<String> temp=new LinkedHashSet<String>();
 				temp.add("true");
 				cell.put("CAPITALIZATION", temp);
-				map.add(i, cell);
 			}
 		}
 		return map;
@@ -156,10 +156,11 @@ public class StanfordNER
 		s.add("@attribute class {class, instance}\n");
 		
 		s.add("@data");
+		
 		for(int i=0;i<content.size();i++){
 			LinkedHashMap<String,LinkedHashSet<String>> cur = map.get(i);
-			//String nerFeatures = "'"+content.get(i).replaceAll("'", "\\\\'") + "',";
-			String nerFeatures = "";
+			String nerFeatures = "'"+content.get(i).replaceAll("'", "\\\\'") + "',";
+			//String nerFeatures = "";
 			//boolean flag = false;
 			if(cur.containsKey("LOCATION")){
 				nerFeatures = nerFeatures + "1,";
@@ -170,7 +171,7 @@ public class StanfordNER
 			}
 				
 			if(cur.containsKey("PERSON")){
-				nerFeatures = nerFeatures + "1,";
+				nerFeatures = nerFeatures + "1,";				
 				//flag = true;
 			}
 			else{
@@ -240,20 +241,5 @@ public class StanfordNER
 		}
 		return s;
 	}
-	 
-	//Test case for using NER
-	/*
-	public static void main(String args[]){
-		String content="Sachin Ramesh Tendulkar (Listeni/ˌsətʃɪn tɛnˈduːlkər/; Marathi: "
-				 + " सचिन रमेश तेंडुलकर; born 24 April 1973) is an Indian former cricketer widely "
-				 + " acknowledged as the greatest batsman of the modern generation, popularly holds the title \"God of Cricket\" among his fans [2] He is also acknowledged as the greatest cricketer of all time.[6][7][8][9] He took up cricket at the age of eleven, made his Test debut against Pakistan at the age of sixteen, and went on to represent Mumbai domestically and India internationally for close to twenty-four years. He is the only player to have scored one hundred international centuries, the first batsman to score a Double Century in a One Day International, and the only player to complete more than 30,000 runs in international cricket.[10] In October 2013, he became the 16th player and first Indian to aggregate "
-				 + " 50,000 runs in all recognized cricket "
-				 + " First-class, List A and Twenty20 combined)";
-	 
-		 // Here we can change the Classifier files to check different ClassLevel(3,4,7)
-		 // Note that I already put all classifier files into the folder lib\classifiers
-		 System.out.println(identifyNER(content, "lib\\classifiers\\english.muc.7class.distsim.crf.ser.gz").toString());
-	 }
-	 */
  
 }
