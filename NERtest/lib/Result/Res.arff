@@ -21,7 +21,7 @@
 'Blake Williams (basketball)',0,0,1,0,0,0,0,0,0,1,0,instance
 'Basketball team',0,0,0,0,0,0,0,0,0,0,0,class
 'AEK B.C.',1,0,0,0,0,0,0,1,0,0,0,instance
-'Bay',0,0,0,0,0,0,0,0,0,0,0,class
+'Bay',0,0,0,0,0,0,0,0,0,0,1,class
 'Dofinivka Estuary',0,0,0,0,0,0,0,1,0,0,0,instance
 'Beach volleyball player',0,0,0,0,0,0,0,0,0,0,0,class
 'Alexander Horst',0,0,0,0,0,0,0,1,0,0,0,instance
@@ -32,14 +32,14 @@
 'Bombay Sapphire',1,0,0,0,0,0,0,1,0,0,0,instance
 'Biological database',0,0,0,0,0,0,0,0,0,0,0,class
 'Conserved Domain Database',0,0,0,0,0,0,0,1,0,0,0,instance
-'Biomolecule',0,0,0,0,0,0,0,0,0,0,0,class
+'Biomolecule',0,0,0,0,0,0,0,0,0,0,1,class
 'Adenylyl cyclase',0,0,0,0,0,0,0,0,0,0,0,instance
 'Bird',0,0,0,0,0,0,0,0,0,0,0,class
 'Blue crane',0,0,0,0,0,0,0,0,0,0,0,instance
 'Body of water',0,0,0,0,0,0,0,0,0,0,0,class
 'Airbus A300',0,0,1,0,0,0,0,1,0,0,0,instance
 'Aegean Sea',0,0,0,0,0,0,0,1,0,0,0,instance
-'Bodybuilder',0,0,0,0,0,0,0,0,0,0,0,class
+'Bodybuilder',0,0,0,0,0,0,0,0,0,0,1,class
 'Lou Ferrigno',0,1,0,0,0,0,0,1,0,0,0,instance
 'Bone',0,0,0,0,0,0,0,0,0,0,0,class
 'Pubis (bone)',0,0,0,0,0,0,0,0,0,1,0,instance
@@ -52,9 +52,9 @@
 'Bobby Czyz',0,1,0,0,0,0,0,1,0,0,0,instance
 'Brain',0,0,0,0,0,0,0,0,0,0,0,class
 'Entorhinal cortex',0,0,0,0,0,0,0,0,0,0,0,instance
-'Brewery',0,0,0,0,0,0,0,0,0,0,0,class
+'Brewery',0,0,0,0,0,0,0,0,0,0,1,class
 'Green Man Brewery',0,0,0,0,0,0,0,1,0,0,0,instance
-'Bridge',0,0,0,0,0,0,0,0,0,0,0,class
+'Bridge',0,0,0,0,0,0,0,0,0,0,1,class
 'Dumbarton Bridge (California)',1,0,0,0,0,0,0,1,0,1,0,instance
 'British royalty',0,0,0,0,0,0,0,0,0,0,0,class
 'Sir John Barker, 4th Baronet',0,1,0,0,0,0,0,0,0,1,0,instance
@@ -69,28 +69,28 @@
 'Ahmedabad Municipal Transport Service',0,0,1,0,0,0,0,1,0,0,0,instance
 'Businessperson',0,0,0,0,0,0,0,0,0,0,0,class
 'Ernst Gundlach',0,0,1,0,0,0,0,1,0,0,0,instance
-'Airport',0,0,0,0,0,0,0,0,0,0,0,class
+'Airport',0,0,0,0,0,0,0,0,0,0,1,class
 'Canadian Junior Football League',0,0,1,0,0,0,0,1,0,0,0,instance
 'Canadian football Team',0,0,0,0,0,0,0,0,0,0,0,class
 'Detroit Wheels',0,0,0,0,0,0,0,1,0,0,0,instance
-'Canal',0,0,0,0,0,0,0,0,0,0,0,class
+'Canal',0,0,0,0,0,0,0,0,0,0,1,class
 'Erie Canal',0,0,0,0,0,0,0,1,0,0,0,instance
 'Canoeist',0,0,0,0,0,0,0,0,0,0,0,class
 'Hans Rein',0,0,0,0,0,0,0,1,0,0,0,instance
-'Cardinal',0,0,0,0,0,0,0,0,0,0,0,class
+'Cardinal',0,0,0,0,0,0,0,0,0,0,1,class
 'Bernard Francis Law',0,1,0,0,0,0,0,1,0,0,0,instance
 'Cartoon',0,0,0,0,0,0,0,0,0,0,0,class
 'Amsterdam Airport Schiphol',1,0,0,0,0,0,0,1,0,0,0,instance
 'Bubblegum Crisis',0,0,0,0,0,0,0,1,0,0,0,instance
 'Case',0,0,0,0,0,0,0,0,0,0,0,class
 'Marbury v. Madison',0,1,0,0,0,0,0,0,0,0,0,instance
-'Castle',0,0,0,0,0,0,0,0,0,0,0,class
+'Castle',0,0,0,0,0,0,0,0,0,0,1,class
 'Knaresborough Castle',0,0,0,0,0,0,0,1,0,0,0,instance
-'Cave',0,0,0,0,0,0,0,0,0,0,0,class
+'Cave',0,0,0,0,0,0,0,0,0,0,1,class
 'Boho Caves',0,0,0,0,0,0,0,1,0,0,0,instance
 'Celestial body',0,0,0,0,0,0,0,0,0,0,0,class
 '2001 Mars Odyssey',0,0,0,0,0,0,0,0,0,1,0,instance
-'Chancellor',0,0,0,0,0,0,0,0,0,0,0,class
+'Chancellor',0,0,0,0,0,0,0,0,0,0,1,class
 'Album',0,0,0,0,0,0,0,0,0,0,0,class
 'Theobald von Bethmann-Hollweg',0,0,0,0,0,0,0,0,0,1,0,instance
 'Cheese',0,0,0,0,0,0,0,0,0,0,0,class
@@ -105,8 +105,8 @@
 '...Baby One More Time (album)',0,0,0,0,0,0,0,0,0,1,0,instance
 'Anatoly Karpov',0,1,0,0,0,0,0,1,0,0,0,instance
 'Christian Bishop',0,0,0,0,0,0,0,1,0,0,0,class
-'Asser',0,0,0,0,0,0,0,0,0,0,0,instance
-'City',0,0,0,0,0,0,0,0,0,0,0,class
+'Asser',0,0,0,0,0,0,0,0,0,0,1,instance
+'City',0,0,0,0,0,0,0,0,0,0,1,class
 'Kansas City, Missouri',1,0,0,0,0,0,0,1,0,1,0,instance
 'Classical music artist',0,0,0,0,0,0,0,0,0,0,0,class
 'Gerard Hengeveld',0,1,0,0,0,0,0,1,0,0,0,instance
@@ -114,11 +114,11 @@
 'The Bard (Sibelius)',0,0,1,0,0,0,0,1,0,1,0,instance
 'Cleric',0,0,0,0,0,0,0,0,0,0,0,class
 'Amateur boxer',0,0,0,0,0,0,0,0,0,0,0,class
-'Asser',0,0,0,0,0,0,0,0,0,0,0,instance
+'Asser',0,0,0,0,0,0,0,0,0,0,1,instance
 'Clerical administrative region',0,0,0,0,0,0,0,0,0,0,0,class
 'Roman Catholic Archdiocese of Armagh',0,0,1,0,0,0,0,1,0,0,0,instance
 'Club moss',0,0,0,0,0,0,0,0,0,0,0,class
-'Isoetales',0,0,0,0,0,0,0,0,1,0,0,instance
+'Isoetales',0,0,0,0,0,0,0,0,1,0,1,instance
 'Coach',0,0,0,0,0,0,0,0,0,0,0,class
 'Thomas Reap',0,0,0,0,0,0,0,1,0,0,0,instance
 'College',0,0,0,0,0,0,0,0,0,0,0,class
@@ -136,8 +136,8 @@
 'Comic',0,0,0,0,0,0,0,0,0,0,0,class
 'A.D. Police: Dead End City',1,0,0,0,0,0,0,1,0,1,0,instance
 'Comic strip',0,0,0,0,0,0,0,0,0,0,0,class
-'Ambassador',0,0,0,0,0,0,0,0,0,0,0,class
-'DirkJan',0,0,0,0,0,0,0,0,0,0,0,instance
+'Ambassador',0,0,0,0,0,0,0,0,0,0,1,class
+'DirkJan',0,0,0,0,0,0,0,0,0,0,1,instance
 'Comics character',0,0,0,0,0,0,0,0,0,0,0,class
 'Barb Wire',0,0,0,0,0,0,0,1,0,0,0,instance
 'Comics creator',0,0,0,0,0,0,0,0,0,0,0,class
@@ -148,14 +148,14 @@
 'Podocarpus latifolius',0,0,0,0,0,0,0,0,0,0,0,instance
 'Constellation',0,0,0,0,0,0,0,0,0,0,0,class
 'Anthony H. Gioia',0,1,0,0,0,0,0,1,0,0,0,instance
-'Antlia',0,0,0,0,0,0,0,0,0,0,0,instance
+'Antlia',0,0,0,0,0,0,0,0,0,0,1,instance
 'Continent',0,0,0,0,0,0,0,0,0,0,0,class
-'Asia',1,0,0,0,0,0,0,0,0,0,0,instance
+'Asia',1,0,0,0,0,0,0,0,0,0,1,instance
 'Convention',0,0,0,0,0,0,0,0,0,0,0,class
 'Biathlon World Championships',0,0,0,0,0,0,0,1,1,0,0,instance
 'Country',0,0,0,0,0,0,0,0,0,0,0,class
 'Akkadian Empire',0,0,0,0,0,0,0,1,0,0,0,instance
-'Crater',0,0,0,0,0,0,0,0,0,0,0,class
+'Crater',0,0,0,0,0,0,0,0,0,0,1,class
 'Keeler (Martian crater)',0,0,0,0,0,0,0,0,0,1,0,instance
 'Cricket ground',0,0,0,0,0,0,0,0,0,0,0,class
 'American football coach',0,0,0,0,0,0,0,0,0,0,0,class
@@ -170,7 +170,7 @@
 'Al Capone',0,0,0,0,0,0,0,1,0,0,0,instance
 'Crustacean',0,0,0,0,0,0,0,0,0,0,0,class
 'Dan Shamash',0,1,0,0,0,0,0,1,0,0,0,instance
-'Branchiopoda',0,0,0,0,0,0,0,0,0,0,0,instance
+'Branchiopoda',0,0,0,0,0,0,0,0,0,0,1,instance
 'Cultivar (cultivated variety)',0,0,0,0,0,0,0,0,0,1,0,class
 'Kohlrabi',0,0,0,0,0,0,0,0,0,0,0,instance
 'Curler',0,0,0,0,0,0,0,0,0,0,0,class
@@ -203,7 +203,7 @@
 'Abortion',0,0,0,0,0,0,0,0,0,0,0,instance
 'Drug',0,0,0,0,0,0,0,0,0,0,0,class
 'American football player',0,0,0,0,0,0,0,0,0,0,0,class
-'Amoxicillin',0,0,0,0,0,0,0,0,0,0,0,instance
+'Amoxicillin',0,0,0,0,0,0,0,0,0,0,1,instance
 'Earthquake',0,0,0,0,0,0,0,0,0,0,0,class
 '1667 Dubrovnik earthquake',1,0,0,0,0,0,0,0,0,1,0,instance
 'Economist',0,0,0,0,0,0,0,0,0,0,0,class
@@ -226,7 +226,7 @@
 'Ethnic group',0,0,0,0,0,0,0,0,0,0,0,class
 'American football Team',0,0,0,0,0,0,0,0,0,0,0,class
 'Ababda people',0,0,0,0,0,0,0,0,1,0,0,instance
-'Eukaryote',0,0,0,0,0,0,0,0,0,0,0,class
+'Eukaryote',0,0,0,0,0,0,0,0,0,0,1,class
 'Aardwolf',0,0,0,0,0,0,0,0,0,0,0,instance
 'Eurovision song contest entry',0,0,0,0,0,0,0,0,0,0,0,class
 'All Night Long (Simon Mathew song)',0,0,1,0,0,0,0,0,0,1,0,instance
@@ -238,7 +238,7 @@
 'Academic journal',0,0,0,0,0,0,0,0,0,0,0,class
 'Arizona Cardinals',0,0,1,0,0,0,0,1,1,0,0,instance
 'Hubert de Givenchy',0,0,1,0,0,0,0,1,0,0,0,instance
-'Fern',0,0,0,0,0,0,0,0,0,0,0,class
+'Fern',0,0,0,0,0,0,0,0,0,0,1,class
 'Pyrrosia rupestris',0,0,0,0,0,0,0,0,1,0,0,instance
 'Fictional character',0,0,0,0,0,0,0,0,0,0,0,class
 'Barb Wire',0,0,0,0,0,0,0,1,0,0,0,instance
@@ -248,13 +248,13 @@
 'Brian Boitano',0,1,0,0,0,0,0,1,0,0,0,instance
 'Movie',0,0,0,0,0,0,0,0,0,0,0,class
 'Amphibian',0,0,0,0,0,0,0,0,0,0,0,class
-'Actrius',0,0,0,0,0,0,0,0,0,0,0,instance
+'Actrius',0,0,0,0,0,0,0,0,0,0,1,instance
 'Film festival',0,0,0,0,0,0,0,0,0,0,0,class
 'Arab Film Festival',0,0,0,0,0,0,0,1,0,0,0,instance
 'Fish',0,0,0,0,0,0,0,0,0,0,0,class
-'Chondrichthyes',0,0,0,0,0,0,0,0,1,0,0,instance
+'Chondrichthyes',0,0,0,0,0,0,0,0,1,0,1,instance
 'Flowering plant',0,0,0,0,0,0,0,0,0,0,0,class
-'Merlot',0,0,0,0,0,0,0,0,0,0,0,instance
+'Merlot',0,0,0,0,0,0,0,0,0,0,1,instance
 'Food',0,0,0,0,0,0,0,0,0,0,0,class
 'Bombay Sapphire',1,0,0,0,0,0,0,1,0,0,0,instance
 'Football league season',0,0,0,0,0,0,0,0,0,0,0,class
@@ -264,9 +264,9 @@
 'Formula One racer',0,0,0,0,0,0,0,0,0,1,0,class
 'Jack Brabham',0,1,0,0,0,0,0,1,0,0,0,instance
 'Formula 1 team',0,0,0,0,0,0,0,0,0,1,0,class
-'Brabham',0,0,0,0,0,0,0,0,0,0,0,instance
+'Brabham',0,0,0,0,0,0,0,0,0,0,1,instance
 'Fungus',0,0,0,0,0,0,0,0,0,0,0,class
-'Septoria',0,0,0,0,0,0,0,0,0,0,0,instance
+'Septoria',0,0,0,0,0,0,0,0,0,0,1,instance
 'Gaelic games player',0,0,0,0,0,0,0,0,0,0,0,class
 'Amusement park attraction',0,0,0,0,0,0,0,0,0,0,0,class
 'John Leonard (Gaelic footballer)',0,1,0,0,0,0,0,0,0,1,0,instance
@@ -277,13 +277,13 @@
 'Garden',0,0,0,0,0,0,0,0,0,0,0,class
 'Arboretum at Penn State Behrend',0,0,1,0,0,0,0,1,0,0,0,instance
 'Gene',0,0,0,0,0,0,0,0,0,0,0,class
-'Fam78b',0,0,0,0,0,0,0,0,0,0,0,instance
+'Fam78b',0,0,0,0,0,0,0,0,0,0,1,instance
 'Ginkgo',0,0,0,0,0,0,0,0,0,0,0,class
 'Burnout (ride)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Cheirophyllum',0,0,0,0,0,0,0,0,0,0,0,instance
+'Cheirophyllum',0,0,0,0,0,0,0,0,0,0,1,instance
 'Given name',0,0,0,0,0,0,0,0,0,0,0,class
-'Adrian',0,0,0,0,0,0,0,0,0,0,0,instance
-'Glacier',0,0,0,0,0,0,0,0,0,0,0,class
+'Adrian',0,0,0,0,0,0,0,0,0,0,1,instance
+'Glacier',0,0,0,0,0,0,0,0,0,0,1,class
 'Klondike Glacier',0,0,0,0,0,0,0,1,0,0,0,instance
 'Gnetophytes',0,0,0,0,0,0,0,0,1,0,0,class
 'Ephedra antisyphilitica',0,0,0,0,0,0,0,0,0,0,0,instance
@@ -304,14 +304,14 @@
 'Adrenal gland',0,0,0,0,0,0,0,0,0,0,0,instance
 '1964 Aintree 200',0,0,1,0,0,0,0,0,0,1,0,instance
 'Grape',0,0,0,0,0,0,0,0,0,0,0,class
-'Merlot',0,0,0,0,0,0,0,0,0,0,0,instance
+'Merlot',0,0,0,0,0,0,0,0,0,0,1,instance
 'Green alga',0,0,0,0,0,0,0,0,0,0,0,class
-'Chlorophyceae',0,0,0,0,0,0,0,0,0,0,0,instance
+'Chlorophyceae',0,0,0,0,0,0,0,0,0,0,1,instance
 'Gridiron football player',0,0,0,0,0,0,0,0,0,0,0,class
 'Bert Bell',0,1,0,0,0,0,0,1,0,0,0,instance
 'Group',0,0,0,0,0,0,0,0,0,0,0,class
 'Gilbert (band)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Guitarist',0,0,0,0,0,0,0,0,0,0,0,class
+'Guitarist',0,0,0,0,0,0,0,0,0,0,1,class
 'Animal',0,0,0,0,0,0,0,0,0,0,0,class
 'Kipper (musician)',0,0,0,0,0,0,0,0,0,1,0,instance
 'Gymnast',0,0,0,0,0,0,0,0,0,0,0,class
@@ -331,7 +331,7 @@
 'Balmoral Castle',1,0,0,0,0,0,0,1,0,0,0,instance
 'Hockey team',0,0,0,0,0,0,0,0,0,0,0,class
 'Detroit Red Wings',0,0,1,0,0,0,0,1,0,0,0,instance
-'Holiday',0,0,0,0,0,0,0,0,0,0,0,class
+'Holiday',0,0,0,0,0,0,0,0,0,0,1,class
 'All Souls\' Day',0,0,0,0,0,1,0,1,0,1,0,instance
 'Hollywood cartoon',0,0,0,0,0,0,0,0,0,0,0,class
 'Animanga character',0,0,0,0,0,0,0,0,0,0,0,class
@@ -349,14 +349,14 @@
 'John Sealy Hospital',0,0,1,0,0,0,0,1,0,0,0,instance
 'Hotel',0,0,0,0,0,0,0,0,0,0,0,class
 'Cadogan Hotel',0,0,0,0,0,0,0,1,0,0,0,instance
-'HumanGene',0,0,0,0,0,0,0,0,0,0,0,class
-'Fam78b',0,0,0,0,0,0,0,0,0,0,0,instance
+'HumanGene',0,0,0,0,0,0,0,0,0,0,1,class
+'Fam78b',0,0,0,0,0,0,0,0,0,0,1,instance
 'Ice hockey league',0,0,0,0,0,0,0,0,0,0,0,class
 'National Hockey League',0,0,1,0,0,0,0,1,0,0,0,instance
 'Ice hockey player',0,0,0,0,0,0,0,0,0,0,0,class
 'George Allen (ice hockey)',0,1,0,0,0,0,0,0,0,1,0,instance
 'Information appliance',0,0,0,0,0,0,0,0,0,0,0,class
-'Anime',0,0,0,0,0,0,0,0,0,0,0,class
+'Anime',0,0,0,0,0,0,0,0,0,0,1,class
 'Acorn Electron',0,0,1,0,0,0,0,1,0,0,0,instance
 'Infrastructure',0,0,0,0,0,0,0,0,0,0,0,class
 'Amsterdam Airport Schiphol',1,0,0,0,0,0,0,1,0,0,0,instance
@@ -366,20 +366,20 @@
 'Ancyra (genus)',0,0,0,0,0,0,0,0,0,1,0,instance
 'Instrumentalist',0,0,0,0,0,0,0,0,0,0,0,class
 'Kipper (musician)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Island',0,0,0,0,0,0,0,0,0,0,0,class
+'Island',0,0,0,0,0,0,0,0,0,0,1,class
 'Bubblegum Crisis',0,0,0,0,0,0,0,1,0,0,0,instance
 'Achill Island',1,0,0,0,0,0,0,1,0,0,0,instance
 'Jockey (horse racer)',0,0,0,0,0,0,0,0,0,1,0,class
 'Eric Guerin',0,1,0,0,0,0,0,1,0,0,0,instance
 'Journalist',0,0,0,0,0,0,0,0,0,0,0,class
-'Judge',0,0,0,0,0,0,0,0,0,0,0,class
+'Judge',0,0,0,0,0,0,0,0,0,0,1,class
 'Charles Evans Hughes',0,1,0,0,0,0,0,1,0,0,0,instance
 'Lacrosse league',0,0,0,0,0,0,0,0,0,0,0,class
 'National Lacrosse League',0,0,1,0,0,0,0,1,0,0,0,instance
 'Lacrosse player',0,0,0,0,0,0,0,0,0,0,0,class
 'Arachnid',0,0,0,0,0,0,0,0,0,0,0,class
 'Rich Catton',0,1,0,0,0,0,0,1,0,0,0,instance
-'Lake',0,0,0,0,0,0,0,0,0,0,0,class
+'Lake',0,0,0,0,0,0,0,0,0,0,1,class
 'Arabian Sea',0,0,0,0,0,0,0,1,0,0,0,instance
 'Launch pad',0,0,0,0,0,0,0,0,0,0,0,class
 'Jiuquan Launch Area 4',0,0,0,0,0,0,0,0,0,1,0,instance
@@ -389,7 +389,7 @@
 'Marbury v. Madison',0,1,0,0,0,0,0,0,0,0,0,instance
 'Legislature',0,0,0,0,0,0,0,0,0,0,0,class
 'Chaco socos',0,0,0,0,0,0,0,0,1,0,0,instance
-'Bundestag',0,0,0,0,0,0,0,0,0,0,0,instance
+'Bundestag',0,0,0,0,0,0,0,0,0,0,1,instance
 'Library',0,0,0,0,0,0,0,0,0,0,0,class
 'Library of Alexandria',1,0,0,0,0,0,0,1,0,0,0,instance
 'Ligament',0,0,0,0,0,0,0,0,0,0,0,class
@@ -399,21 +399,21 @@
 'Locomotive',0,0,0,0,0,0,0,0,0,0,0,class
 'Annie (locomotive)',0,0,0,0,0,0,0,0,0,1,0,instance
 'Lymph',0,0,0,0,0,0,0,0,0,0,0,class
-'Archaea',0,0,0,0,0,0,0,0,0,0,0,class
+'Archaea',0,0,0,0,0,0,0,0,0,0,1,class
 'Deep inguinal lymph nodes',0,0,0,0,0,0,0,0,1,0,0,instance
 'Magazine',0,0,0,0,0,0,0,0,0,0,0,class
 'Mammal',0,0,0,0,0,0,0,0,0,0,0,class
 'Aardwolf',0,0,0,0,0,0,0,0,0,0,0,instance
-'Manga',0,0,0,0,0,0,0,0,0,0,0,class
+'Manga',0,0,0,0,0,0,0,0,0,0,1,class
 'A.D. Police: Dead End City',1,0,0,0,0,0,0,1,0,1,0,instance
 'Martial artist',0,0,0,0,0,0,0,0,0,0,0,class
 'Emin Boztepe',0,1,0,0,0,0,0,1,0,0,0,instance
-'Mayor',0,0,0,0,0,0,0,0,0,0,0,class
-'Methanomicrobiales',0,0,0,0,0,0,0,0,1,0,0,instance
+'Mayor',0,0,0,0,0,0,0,0,0,0,1,class
+'Methanomicrobiales',0,0,0,0,0,0,0,0,1,0,1,instance
 'Salvador de Vives',0,0,0,0,0,0,0,1,1,0,0,instance
 'Mean of transportation',0,0,0,0,0,0,0,0,0,0,0,class
 'Airbus A300',0,0,1,0,0,0,0,1,0,0,0,instance
-'Medician',0,0,0,0,0,0,0,0,0,0,0,class
+'Medician',0,0,0,0,0,0,0,0,0,0,1,class
 'David Charles (physician)',0,1,0,0,0,0,0,0,0,1,0,instance
 'Member of parliament',0,0,0,0,0,0,0,0,0,0,0,class
 'Blake Richards',0,1,0,0,0,0,0,1,0,0,0,instance
@@ -435,13 +435,13 @@
 'International Fight League',0,0,1,0,0,0,0,1,0,0,0,instance
 'Model',0,0,0,0,0,0,0,0,0,0,0,class
 'Gia Carangi',0,0,1,0,0,0,0,1,0,0,0,instance
-'Mollusca',0,0,0,0,0,0,0,0,0,0,0,class
+'Mollusca',0,0,0,0,0,0,0,0,0,0,1,class
 'Abalone',0,0,0,0,0,0,0,0,0,0,0,instance
-'Monarch',0,0,0,0,0,0,0,0,0,0,0,class
+'Monarch',0,0,0,0,0,0,0,0,0,0,1,class
 'Ariadne (empress)',0,0,0,0,0,0,0,0,0,1,0,instance
 'Monument',0,0,0,0,0,0,0,0,0,0,0,class
 'Civil Rights Memorial',0,0,0,0,0,0,0,1,0,0,0,instance
-'Moss',0,0,0,0,0,0,0,0,0,0,0,class
+'Moss',0,0,0,0,0,0,0,0,0,0,1,class
 'Architectural structure',0,0,0,0,0,0,0,0,0,0,0,class
 'Breutelia pendula',0,0,0,0,0,0,0,0,0,0,0,instance
 'Motorcycle',0,0,0,0,0,0,0,0,0,0,0,class
@@ -467,7 +467,7 @@
 'Muscle',0,0,0,0,0,0,0,0,0,0,0,class
 'Artery',0,0,0,0,0,0,0,0,0,0,0,class
 'Abductor digiti minimi muscle of hand',0,0,0,0,0,0,0,0,0,0,0,instance
-'Museum',0,0,0,0,0,0,0,0,0,0,0,class
+'Museum',0,0,0,0,0,0,0,0,0,0,1,class
 'Bletchley Park',0,0,0,0,0,0,0,1,0,0,0,instance
 'Music festival',0,0,0,0,0,0,0,0,0,0,0,class
 'BoomTown Fair',0,0,0,0,0,0,0,1,0,0,0,instance
@@ -486,7 +486,7 @@
 'Nascar driver',0,0,0,0,0,0,0,0,0,0,0,class
 'Dale Earnhardt',0,1,0,0,0,0,0,1,0,0,0,instance
 'National collegiate athletic association athlete',0,0,0,0,0,0,0,0,0,0,0,class
-'ArtificialSatellite',0,0,0,0,0,0,0,0,0,0,0,class
+'ArtificialSatellite',0,0,0,0,0,0,0,0,0,0,1,class
 'Ken Williams (basketball)',0,1,0,0,0,0,0,0,0,1,0,instance
 'National football league event',0,0,0,0,0,0,0,0,0,0,0,class
 'Super Bowl',0,0,0,0,0,0,0,1,0,0,0,instance
@@ -517,14 +517,14 @@
 'Hungary at the 1968 Winter Olympics',0,0,0,0,0,1,0,0,0,1,0,instance
 'Olympics',0,0,0,0,0,0,0,0,0,0,0,class
 '1906 Intercalated Games',0,0,0,0,0,0,0,0,1,1,0,instance
-'Organisation',0,0,0,0,0,0,0,0,0,0,0,class
+'Organisation',0,0,0,0,0,0,0,0,0,0,1,class
 'Adonis (musician)',0,0,0,0,0,0,0,0,0,1,0,instance
 'Gilbert (band)',0,0,0,0,0,0,0,0,0,1,0,instance
 'Organisation member',0,0,0,0,0,0,0,0,0,0,0,class
 'UniKL HC',0,0,0,0,0,0,0,1,0,0,0,instance
 'Painter',0,0,0,0,0,0,0,0,0,0,0,class
 'Christoph Ludwig Agricola',0,1,0,0,0,0,0,1,0,0,0,instance
-'Park',0,0,0,0,0,0,0,0,0,0,0,class
+'Park',0,0,0,0,0,0,0,0,0,0,1,class
 'Deception Pass',0,0,0,0,0,0,0,1,1,0,0,instance
 'Periodical literature',0,0,0,0,0,0,0,0,0,0,0,class
 'Algorithms (journal)',0,0,0,0,0,0,0,0,0,1,0,instance
@@ -554,7 +554,7 @@
 'Blake Richards',0,1,0,0,0,0,0,1,0,0,0,instance
 'Polo league',0,0,0,0,0,0,0,0,0,0,0,class
 'Campeonato Abierto de Hurlingham',0,0,0,0,0,0,0,1,0,0,0,instance
-'Pope',0,0,0,0,0,0,0,0,0,0,0,class
+'Pope',0,0,0,0,0,0,0,0,0,0,1,class
 'Pope Agatho',0,0,0,0,0,0,0,1,0,0,0,instance
 'Populated place',0,0,0,0,0,0,0,0,0,0,0,class
 'Kansas City, Missouri',1,0,0,0,0,0,0,1,0,1,0,instance
@@ -571,14 +571,14 @@
 'Prison',0,0,0,0,0,0,0,0,0,0,0,class
 'HM Prison Dartmoor',0,0,0,0,0,0,0,1,0,0,0,instance
 'Programming language',0,0,0,0,0,0,0,0,0,0,0,class
-'ALGOL',0,0,0,0,0,0,0,0,0,0,0,instance
+'ALGOL',0,0,0,0,0,0,0,0,0,0,1,instance
 'Project',0,0,0,0,0,0,0,0,0,0,0,class
 'Asteroid',0,0,0,0,0,0,0,0,0,0,0,class
 'INDECT',0,0,0,0,0,0,0,0,0,0,0,instance
 'Protected area',0,0,0,0,0,0,0,0,0,0,0,class
-'Dartmoor',0,0,0,0,0,0,0,0,0,0,0,instance
+'Dartmoor',0,0,0,0,0,0,0,0,0,0,1,instance
 'Protein',0,0,0,0,0,0,0,0,0,0,0,class
-'Beta-lactamase',0,0,0,0,0,0,0,0,0,1,0,instance
+'Beta-lactamase',0,0,0,0,0,0,0,0,0,1,1,instance
 'Public transit system',0,0,0,0,0,0,0,0,0,0,0,class
 'Docklands Light Railway',0,0,0,0,0,0,0,1,0,0,0,instance
 'Race',0,0,0,0,0,0,0,0,0,0,0,class
@@ -606,11 +606,11 @@
 'Channel Tunnel',0,0,0,0,0,0,0,1,0,0,0,instance
 'Record label',0,0,0,0,0,0,0,0,0,0,0,class
 'Catherine Coleman',0,1,0,0,0,0,0,1,0,0,0,instance
-'Harthouse',0,0,0,0,0,0,0,0,0,0,0,instance
+'Harthouse',0,0,0,0,0,0,0,0,0,0,1,instance
 'Region',0,0,0,0,0,0,0,0,0,0,0,class
 'Abdera, Thrace',1,0,0,0,0,0,0,1,0,1,0,instance
 'Religious',0,0,0,0,0,0,0,0,0,0,0,class
-'Abraham',0,0,0,0,0,0,0,0,0,0,0,instance
+'Abraham',0,0,0,0,0,0,0,0,0,0,1,instance
 'Religious building',0,0,0,0,0,0,0,0,0,0,0,class
 'Church of the Holy Sepulchre',0,0,0,0,0,0,0,0,0,0,0,instance
 'Reptile',0,0,0,0,0,0,0,0,0,0,0,class
@@ -619,8 +619,8 @@
 'Athlete',0,0,0,0,0,0,0,0,0,0,0,class
 'INDECT',0,0,0,0,0,0,0,0,0,0,0,instance
 'Restaurant',0,0,0,0,0,0,0,0,0,0,0,class
-'Benu',0,0,0,0,0,0,0,0,0,0,0,instance
-'River',0,0,0,0,0,0,0,0,0,0,0,class
+'Benu',0,0,0,0,0,0,0,0,0,0,1,instance
+'River',0,0,0,0,0,0,0,0,0,0,1,class
 'Alabama River',1,0,0,0,0,0,0,1,0,0,0,instance
 'Road',0,0,0,0,0,0,0,0,0,0,0,class
 'Broadway (Manhattan)',1,0,0,0,0,0,0,1,0,1,0,instance
@@ -634,7 +634,7 @@
 'Mumbo Jumbo (roller coaster)',0,0,0,0,0,0,0,0,0,1,0,instance
 'Route of transportation',0,0,0,0,0,0,0,0,0,0,0,class
 'Broadway (Manhattan)',1,0,0,0,0,0,0,1,0,1,0,instance
-'Rower',0,0,0,0,0,0,0,0,0,0,0,class
+'Rower',0,0,0,0,0,0,0,0,0,0,1,class
 'Peter Berger (rower)',0,1,0,0,0,0,0,0,0,1,0,instance
 'Royalty',0,0,0,0,0,0,0,0,0,0,0,class
 'Australian football league',0,0,0,0,0,0,0,0,0,0,0,class
@@ -644,18 +644,18 @@
 'Rugby World Cup',0,0,0,0,0,0,0,1,0,0,0,instance
 'Rugby player',0,0,0,0,0,0,0,0,0,0,0,class
 'Julien Frier',0,1,0,0,0,0,0,1,0,0,0,instance
-'Saint',0,0,0,0,0,0,0,0,0,0,0,class
-'Bertin',0,0,0,0,0,0,0,0,0,0,0,instance
-'Satellite',0,0,0,0,0,0,0,0,0,0,0,class
+'Saint',0,0,0,0,0,0,0,0,0,0,1,class
+'Bertin',0,0,0,0,0,0,0,0,0,0,1,instance
+'Satellite',0,0,0,0,0,0,0,0,0,0,1,class
 'Ontario Australian Football League Division 2',0,0,1,0,0,0,0,0,0,1,0,instance
 '2001 Mars Odyssey',0,0,0,0,0,0,0,0,0,1,0,instance
 'Scientist',0,0,0,0,0,0,0,0,0,0,0,class
 'David Charles (physician)',0,1,0,0,0,0,0,0,0,1,0,instance
 'Screenwriter',0,0,0,0,0,0,0,0,0,0,0,class
 'Alec Sokolow',0,1,0,0,0,0,0,1,0,0,0,instance
-'Sea',0,0,0,0,0,0,0,0,0,0,0,class
+'Sea',0,0,0,0,0,0,0,0,0,0,1,class
 'Aegean Sea',0,0,0,0,0,0,0,1,0,0,0,instance
-'Senator',0,0,0,0,0,0,0,0,0,0,0,class
+'Senator',0,0,0,0,0,0,0,0,0,0,1,class
 'John Hogg',0,1,0,0,0,0,0,1,0,0,0,instance
 'Settlement',0,0,0,0,0,0,0,0,0,0,0,class
 'Australian football Team',0,0,0,0,0,0,0,0,0,0,0,class
@@ -667,7 +667,7 @@
 'Single',0,0,0,0,0,0,0,0,0,0,0,class
 'Ballad of the Green Berets',0,0,1,0,0,0,0,0,0,0,0,instance
 'Site of Special Scientific Interest',0,0,1,0,0,0,0,1,0,0,0,class
-'Lundy',0,0,0,0,0,0,0,0,0,0,0,instance
+'Lundy',0,0,0,0,0,0,0,0,0,0,1,instance
 'Skater',0,0,0,0,0,0,0,0,0,0,0,class
 'Adult (pornographic) actor',0,0,0,0,0,0,0,0,0,1,0,class
 'Brisbane Lions',0,0,0,0,0,0,0,1,0,0,0,instance
@@ -747,8 +747,8 @@
 'Daryl Selby',0,1,0,0,0,0,0,1,0,0,0,instance
 'Stadium',0,0,0,0,0,0,0,0,0,0,0,class
 'Cardiff Arms Park',0,0,0,0,0,0,0,1,0,0,0,instance
-'Star',0,0,0,0,0,0,0,0,0,0,0,class
-'Aldebaran',0,0,0,0,0,0,0,0,0,0,0,instance
+'Star',0,0,0,0,0,0,0,0,0,0,1,class
+'Aldebaran',0,0,0,0,0,0,0,0,0,0,1,instance
 'Station',0,0,0,0,0,0,0,0,0,0,0,class
 'Bethnal Green tube station',0,0,0,0,0,0,0,0,0,0,0,instance
 'Stream',0,0,0,0,0,0,0,0,0,0,0,class
@@ -759,7 +759,7 @@
 'Supreme Court of the United States case',1,0,0,0,0,0,0,0,0,0,0,class
 'Marbury v. Madison',0,1,0,0,0,0,0,0,0,0,0,instance
 'Surname',0,0,0,0,0,0,0,0,0,0,0,class
-'Litvinov',0,0,0,0,0,0,0,0,0,0,0,instance
+'Litvinov',0,0,0,0,0,0,0,0,0,0,1,instance
 'Swimmer',0,0,0,0,0,0,0,0,0,0,0,class
 'Duke Kahanamoku',0,0,0,0,0,0,0,1,0,0,0,instance
 'Table tennis player',0,0,0,0,0,0,0,0,0,0,0,class
@@ -782,7 +782,7 @@
 'Tennis player',0,0,0,0,0,0,0,0,0,0,0,class
 'Andre Agassi',0,1,0,0,0,0,0,1,0,0,0,instance
 'Tennis tournament',0,0,0,0,0,0,0,0,0,0,0,class
-'Theatre',0,0,0,0,0,0,0,0,0,0,0,class
+'Theatre',0,0,0,0,0,0,0,0,0,0,1,class
 'Barbican Centre',0,0,0,0,0,0,0,1,0,0,0,instance
 'Time period',0,0,0,0,0,0,0,0,0,0,0,class
 '2',0,0,0,0,0,0,0,0,0,1,0,instance
@@ -791,10 +791,10 @@
 'A cappella',0,0,0,0,0,0,0,0,0,0,0,instance
 'Tournament',0,0,0,0,0,0,0,0,0,0,0,class
 '1970 FIFA World Cup',0,0,1,0,0,0,0,0,0,1,0,instance
-'Tower',0,0,0,0,0,0,0,0,0,0,0,class
+'Tower',0,0,0,0,0,0,0,0,0,0,1,class
 'Lighthouse of Alexandria',1,0,0,0,0,0,0,1,0,0,0,instance
 'Town',0,0,0,0,0,0,0,0,0,0,0,class
-'Aalen',0,0,0,0,0,0,0,0,0,0,0,instance
+'Aalen',0,0,0,0,0,0,0,0,0,0,1,instance
 'Trade union',0,0,0,0,0,0,0,0,0,0,0,class
 'Equity (trade union)',0,0,0,0,0,0,0,0,0,1,0,instance
 'Train',0,0,0,0,0,0,0,0,0,0,0,class
@@ -804,9 +804,9 @@
 'Big Dig',0,0,0,0,0,0,0,1,0,0,0,instance
 'Unit of work',0,0,0,0,0,0,0,0,0,0,0,class
 'INDECT',0,0,0,0,0,0,0,0,0,0,0,instance
-'University',0,0,0,0,0,0,0,0,0,0,0,class
+'University',0,0,0,0,0,0,0,0,0,0,1,class
 'American University of Beirut',0,0,1,0,0,0,0,1,0,0,0,instance
-'Valley',0,0,0,0,0,0,0,0,0,0,0,class
+'Valley',0,0,0,0,0,0,0,0,0,0,1,class
 'Grand Valley (Colorado)',1,0,0,0,0,0,0,1,0,1,0,instance
 'Vein',0,0,0,0,0,0,0,0,0,0,0,class
 'Badminton player',0,0,0,0,0,0,0,0,0,0,0,class
@@ -853,7 +853,7 @@
 'World Heritage Site',0,0,0,0,0,0,0,1,0,0,0,class
 'Acropolis of Athens',1,0,0,0,0,0,0,1,0,0,0,instance
 'Wrestler',0,0,0,0,0,0,0,0,0,0,0,class
-'Bank',0,0,0,0,0,0,0,0,0,0,0,class
+'Bank',0,0,0,0,0,0,0,0,0,0,1,class
 'Antonio Thomas (wrestler)',0,0,0,0,0,0,0,0,0,1,0,instance
 'Wrestling event',0,0,0,0,0,0,0,0,0,0,0,class
 'DGUSA Fearless',0,0,0,0,0,0,0,1,1,0,0,instance
@@ -871,7 +871,7 @@
 'Activity',0,0,0,0,0,0,0,0,0,0,0,class
 'Acquire',0,0,0,0,0,0,0,0,0,0,0,instance
 'Name',0,0,0,0,0,0,0,0,0,0,0,class
-'Adrian',0,0,0,0,0,0,0,0,0,0,0,instance
+'Adrian',0,0,0,0,0,0,0,0,0,0,1,instance
 'Person',0,0,0,0,0,0,0,0,0,0,0,class
 'Aa (architect)',0,0,0,0,0,0,0,0,0,1,0,instance
 'Actor',0,0,0,0,0,0,0,0,0,0,0,class
@@ -884,7 +884,7 @@
 'Genre',0,0,0,0,0,0,0,0,0,0,0,class
 'A cappella',0,0,0,0,0,0,0,0,0,0,0,instance
 'Language',0,0,0,0,0,0,0,0,0,0,0,class
-'ALGOL',0,0,0,0,0,0,0,0,0,0,0,instance
+'ALGOL',0,0,0,0,0,0,0,0,0,0,1,instance
 'Software',0,0,0,0,0,0,0,0,0,0,0,class
 'Agent',0,0,0,0,0,0,0,0,0,0,0,class
 'Sir John Barker, 4th Baronet',0,1,0,0,0,0,0,0,0,1,0,instance
@@ -900,4 +900,3 @@
 'Baseball team',0,0,0,0,0,0,0,0,0,0,0,class
 'Arizona Diamondbacks',0,0,1,0,0,0,0,1,1,0,0,instance
 'Basketball league',0,0,0,0,0,0,0,0,0,0,0,class
-'Microsoft',0,0,0,0,0,0,0,0,0,0,0,instance

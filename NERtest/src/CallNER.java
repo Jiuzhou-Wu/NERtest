@@ -9,13 +9,18 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.stream.Stream;
+
+import org.annolab.tt4j.TokenHandler;
+import org.annolab.tt4j.TreeTaggerException;
+import org.annolab.tt4j.TreeTaggerWrapper;
+
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 import edu.stanford.nlp.util.StringUtils;
 
 
 public class CallNER {
-
-	public static void main(String[] args) throws IOException{
+	static String tempPos;
+	public static void main(String[] args) throws IOException, TreeTaggerException{
 		List<String> content = new ArrayList<String>();
 		List<String> typeList = new ArrayList<String>();
 		
@@ -53,9 +58,14 @@ public class CallNER {
 		Files.write(file, ner.toString(map,content,plural,typeList), Charset.forName("UTF-8"));
 	}
 	
-	public static List<String> checkStructure(List<String> content, MaxentTagger tagger){
+	public static List<String> checkStructure(List<String> content, MaxentTagger tagger) throws IOException, TreeTaggerException{
 		List<String> res = new ArrayList<String>();
     	String temp;
+    	
+    	System.setProperty("treetagger.home", "C:\\tree-tagger-windows-3.2\\TreeTagger");
+		TreeTaggerWrapper<String> tt = new TreeTaggerWrapper<String>();
+		tt.setModel("lib\\english-utf8.par:utf-8");
+
     	for(int i=0;i<content.size();i++){
     		temp = "";
     		// flags for different structure features
@@ -77,12 +87,22 @@ public class CallNER {
     			notAlph = true;
     		}
     		
-    		/*if(words.length == 1){
-    			temp = words[0].substring(words[0].lastIndexOf("_")+1, words[0].length());
-    			if(temp.equals("NNP")|| temp.equals("NNPS")){
+    		//check single proper word
+    		if(words.length == 1){
+    			tt.setHandler(new TokenHandler<String>(){
+    				public void token(String token, String pos, String lemma)
+    				{
+    					tempPos = pos;
+    				}
+    			});
+    			tt.process(new String[] {content.get(i)});
+    			System.out.println(content.get(i) + "     " + tempPos);
+    			if(tempPos.equals("NP")|| tempPos.equals("NP") ){
     				properNoun = true;
+    			}else{
+    				properNoun = false;
     			}
-    		}*/
+    		}
     
     		if(temp.contains("IN")){
     			for (int j = 0; j < words.length-1; j++) {

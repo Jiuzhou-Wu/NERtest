@@ -31,5 +31,20 @@
 	<classpathentry kind="lib" path="lib/ApacheJena/slf4j-log4j12-1.7.21.jar"/>
 	<classpathentry kind="lib" path="lib/ApacheJena/xercesImpl-2.11.0.jar"/>
 	<classpathentry kind="lib" path="lib/ApacheJena/xml-apis-1.4.01.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/commons-io-2.2.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/commons-logging-api-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/org.annolab.tt4j-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/spring-aop-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/spring-asm-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/spring-beans-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/spring-context-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/spring-core-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/spring-expression-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/uima-tree-tagger-wrapper-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/uimafit-core-2.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/jar_files/uimaj-core-2.6.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
