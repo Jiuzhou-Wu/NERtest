@@ -280,6 +280,8 @@ public class DbpediaData
                 			fw.write(strArrayResult[i]);
                 			fw.write("\n");
                         	fw.write("class");
+                        	fw.write("\n");
+                			fw.write(DbDataClassAbstractHelper(postfix));
                         	fw.close();
                         	
                         	//write the instance file
@@ -288,8 +290,6 @@ public class DbpediaData
                 			fw = new BufferedWriter(new FileWriter(file.getAbsoluteFile(), true));
                 			fw.write("\n");
                 			fw.write(label);
-                			fw.write("\n");
-                        	fw.write("instance");
                         	fw.close();
                         	
                         	//increment the counter
@@ -314,18 +314,29 @@ public class DbpediaData
         return ;
     }
     
-    
-    private static String DbDataHelper(String uriPostfix){
+    private static String DbDataClassAbstractHelper(String uriPostfix){
     	
-//    	System.out.println("we are at helper");
+    	StringBuffer buffer = new StringBuffer(uriPostfix);
     	
+    	for(int i = 1; i< uriPostfix.length(); i++){
+    		if(Character.isUpperCase(uriPostfix.charAt(i))){
+    			buffer.setCharAt(i, Character.toLowerCase(uriPostfix.charAt(i)));
+    			buffer.insert(i++, '_');
+    		}
+    	}
+    	uriPostfix = buffer.toString();
     	String prefix = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
     			+ "PREFIX owl: <http://www.w3.org/2002/07/owl#>"
-    			+ "PreFIX dbo: <http://dbpedia.org/ontology/>";
-        String queryStr = prefix+"select distinct ?instance (STR(?l) AS ?label) where {?instance a dbo:"
+    			+ "PREFIX dbo: <http://dbpedia.org/ontology/>"
+    			+ "PREFIX dbr: <http://dbpedia.org/resource/>";
+    	
+    	String queryStr = prefix+"select distinct ?abstract where {dbr:"
         		+ uriPostfix
-        		+ "; rdfs:label  ?l . FILTER (LANG(?l) = \"en\")} LIMIT 1";
-        Query query = QueryFactory.create(queryStr);
+        		+ " dbo:abstract ?abstract FILTER (LANG(?abstract) = \"en\")} LIMIT 1";
+//    	System.out.println(uriPostfix);
+    	
+    	
+    	Query query = QueryFactory.create(queryStr);
     	
         try ( QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query) ) {
         	 ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
@@ -342,6 +353,45 @@ public class DbpediaData
 //             	System.out.println(strArrayResult[3].substring(strArrayResult[3].indexOf("\"")+1, strArrayResult[3].lastIndexOf("\"")));
              	
              	return strArrayResult[3].substring(strArrayResult[3].indexOf("\"")+1, strArrayResult[3].lastIndexOf("\""));
+             }
+        	
+        }catch(Exception e) {
+        	
+            e.printStackTrace();
+        }
+    	
+    	return "";
+    }
+    
+    private static String DbDataHelper(String uriPostfix){
+    	
+//    	System.out.println("we are at helper");
+    	
+    	String prefix = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
+    			+ "PREFIX owl: <http://www.w3.org/2002/07/owl#>"
+    			+ "PreFIX dbo: <http://dbpedia.org/ontology/>";
+        String queryStr = prefix+"select distinct ?instance (STR(?l) AS ?label) ?abstract where {?instance a dbo:"
+        		+ uriPostfix
+        		+ "; rdfs:label  ?l;  dbo:abstract ?abstract  . FILTER (LANG(?l) = \"en\" && LANG(?abstract) = \"en\")} LIMIT 1";
+        Query query = QueryFactory.create(queryStr);
+    	
+        try ( QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query) ) {
+        	 ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
+             
+             // Execute.
+             ResultSet rs = qexec.execSelect();
+             
+             String textResult = "";
+             String[] strArrayResult;
+             
+             if( rs.hasNext()  ){
+             	textResult = ResultSetFormatter.asText(rs);
+             	strArrayResult = textResult.split("\n");
+             	StringBuffer temp = new StringBuffer(strArrayResult[3].substring(strArrayResult[3].indexOf("\"")+1, strArrayResult[3].lastIndexOf("\"")));
+             	temp.replace(temp.indexOf("|")-2, temp.indexOf("|")+3, "\ninstance\n");
+//             	System.out.println(temp);
+             	
+             	return temp.toString();
              }
         	
         }catch(Exception e) {
