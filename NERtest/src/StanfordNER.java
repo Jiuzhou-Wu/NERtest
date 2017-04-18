@@ -137,7 +137,7 @@ public class StanfordNER
 		
 	}
 	
-	public static List<String> toString(ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map, List<String> content, List<String> titleStr, List<String> type){
+	public static List<String> toString(ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map, List<String> content, List<String> titleStr, List<String> type, List<String> dbFeatures){
 		map = capitalization(content,map);
 		List<String> s = new ArrayList<String>();
 		s.add("@relation wekipagesClassify\n");
@@ -153,6 +153,7 @@ public class StanfordNER
 		s.add("@attribute plural numeric");
 		s.add("@attribute notAlpha numeric");
 		s.add("@attribute properNoun numeric");
+		s.add("@attribute dbFeature numeric");
 		s.add("@attribute class {class, instance}\n");
 		
 		s.add("@data");
@@ -227,6 +228,8 @@ public class StanfordNER
 			}
 			
 			nerFeatures = nerFeatures + titleStr.get(i);
+			
+			//nerFeatures = nerFeatures + dbFeatures.get(i);
 			
 			nerFeatures = nerFeatures + type.get(i);
 			/*

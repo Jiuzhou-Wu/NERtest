@@ -21,21 +21,28 @@ import edu.stanford.nlp.util.StringUtils;
 public class CallNER {
 	static String tempPos;
 	public static void main(String[] args) throws IOException, TreeTaggerException{
-		List<String> content = new ArrayList<String>();
+		ArrayList<String> content = new ArrayList<String>();
 		List<String> typeList = new ArrayList<String>();
+		List<String> abstracts = new ArrayList<String>();
 		
 		try(Stream<Path> paths = Files.walk(Paths.get("lib\\data"))) {
 		    paths.forEach(filePath -> {
 		        if (Files.isRegularFile(filePath)) {
 		            try {
 						List<String> s = Files.readAllLines(filePath, Charset.forName("UTF-8"));
-						//System.out.println(filePath);
+						System.out.println(filePath);
 						String title = s.get(1);
 						String type = s.get(2);
+						String abs = "EmptyAbs";
+						if(s.get(3) != null){
+							abs = s.get(3);
+						}
+						
 						//title = title.substring(11, title.length()-8);
 						content.add(title);
-						//System.out.println(s.get(1));
+						//System.out.println(s.get(3));
 						typeList.add(type);
+						abstracts.add(abs);
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -43,22 +50,25 @@ public class CallNER {
 		        }
 		    });
 		}
-		
+	
 		String model = "lib\\models\\wsj-0-18-bidirectional-nodistsim.tagger";
     	MaxentTagger tagger = new MaxentTagger(model);
     	
     	List<String> plural = new ArrayList<String>();
-    	plural = checkStructure(content, tagger);
+    	plural = checkStructure(content, tagger, abstracts);
     	
-		StanfordNER ner = new StanfordNER();
+    	List<String> dbFea = DbpediaData.dbFeature(content);
+    	System.out.println(content.size());
+    	
+    	StanfordNER ner = new StanfordNER();
 		String classifier = "lib\\classifiers\\english.muc.7class.distsim.crf.ser.gz";
 		
 		Path file = Paths.get("lib\\Result\\Res.arff");
 		ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map = ner.identify(content, classifier);
-		Files.write(file, ner.toString(map,content,plural,typeList), Charset.forName("UTF-8"));
+		Files.write(file, ner.toString(map,content,plural,typeList,dbFea), Charset.forName("UTF-8"));
 	}
 	
-	public static List<String> checkStructure(List<String> content, MaxentTagger tagger) throws IOException, TreeTaggerException{
+	public static List<String> checkStructure(List<String> content, MaxentTagger tagger, List<String> absL) throws IOException, TreeTaggerException{
 		List<String> res = new ArrayList<String>();
     	String temp;
     	
@@ -74,6 +84,7 @@ public class CallNER {
     		boolean plural = false;
     		boolean notAlph = false;
     		boolean properNoun = false;
+    		/*boolean commonNoun = false;*/
     		
     		
     		// assign values for flags
@@ -89,19 +100,42 @@ public class CallNER {
     		
     		//check single proper word
     		if(words.length == 1){
+    			String testW = content.get(i);
+    			String test = absL.get(i);
+    			String word ="";
+    			if(test.indexOf(testW.toLowerCase())> -1 && test.indexOf(testW.toLowerCase())<test.indexOf(".")){
+    	    		int start = test.indexOf(testW.toLowerCase());
+    	        	int end = start + testW.length();
+    	        	word = test.substring(start, end);
+    	    	}
+    	    	else if(test.indexOf(testW)> -1 && test.indexOf(testW)<test.indexOf(".")){
+    	    		int start = test.indexOf(testW);
+    	        	int end = start + testW.length();
+    	        	word = test.substring(start, end);
+    	    	}
+    	    	else{
+    	    		word = "0";
+    	    	}
+    			
+    			
     			tt.setHandler(new TokenHandler<String>(){
     				public void token(String token, String pos, String lemma)
     				{
     					tempPos = pos;
     				}
     			});
-    			tt.process(new String[] {content.get(i)});
-    			System.out.println(content.get(i) + "     " + tempPos);
-    			if(tempPos.equals("NP")|| tempPos.equals("NP") ){
+    			tt.process(new String[] {word});
+    			//System.out.println(content.get(i) + "     " + word + "     "  + tempPos);
+    			if(tempPos.equals("NP")|| tempPos.equals("NPS") ){
     				properNoun = true;
     			}else{
     				properNoun = false;
     			}
+    		/*	if(tempPos.equals("NN")||tempPos.equals("NNS")){
+    				commonNoun = true;
+    			}else{
+    				commonNoun = false;
+    			}*/
     		}
     
     		if(temp.contains("IN")){
@@ -146,6 +180,14 @@ public class CallNER {
     		else{
     			features = features + "0,";
     		}
+    		/*if(commonNoun){
+    			features = features + "1,";
+    		}
+    		else{
+    			features = features + "0,";
+    		}*/
+    		
+    		//features = features + absL.get(i);
     		
     		res.add(features);
     	}
