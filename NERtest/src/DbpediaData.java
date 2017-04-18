@@ -4,10 +4,12 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -66,25 +68,35 @@ public class DbpediaData
 //      	    
 //        	
 //    	}
-    	DbData(1000);
-    	
+//    	DbData(1000);
+    	Test.test();
     	
     }
     
     
     
     public static ArrayList<String> dbFeature(ArrayList<String> titles){
+    	
     	ArrayList<String> resultList = new ArrayList<String>(titles.size());
     	String totalCount = "0";
-    	for(int i = 0; i<resultList.size(); i++){
-    		
+    	
+    	
+    	for(int i = 0; i<titles.size(); i++){
     		String title = titles.get(i);
+    		
+    		for(int j = 0; j<title.length(); j++){
+    			if(title.charAt(j)=='\"'){
+    				title = title.replace('\"', ' ');
+    				
+    			}
+    		}
     		
     		String prefix = "PREFIX dbo: <http://dbpedia.org/ontology/>"
     				+ "PREFIX dbr: <http://dbpedia.org/resource/>";
-    		String queryStr = prefix + "select ( count ( distinct ?Concept ) AS ?total ) where {?instance dbo:type dbr:"
-    				+ title
-    				+ "} LIMIT 100";
+    		String queryStr = prefix + "select ( count ( distinct ?instance ) AS ?total ) where {?instance dbo:type <http://dbpedia.org/resource/"
+    				+ title.replace(" ", "_")
+    				+ "> } LIMIT 100";
+//    		System.out.println(queryStr);
     		Query query = QueryFactory.create(queryStr);
     		try ( QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query) ) {
                 // Set the DBpedia specific timeout.
@@ -92,9 +104,22 @@ public class DbpediaData
 
                 // Execute.
                 ResultSet rs = qexec.execSelect();
+                
+                String textResult = "";
+                String[] strArrayResult;
+                
                 if(rs.hasNext())
                 {
-                    totalCount=rs.next().get("total").toString();
+                	
+                	textResult = ResultSetFormatter.asText(rs);
+//                	System.out.println(textResult);
+                	strArrayResult = textResult.split("\n");
+                	
+//                	for(int line = 0; line < strArrayResult.length; line++){
+//                		System.out.println(strArrayResult[line]);
+//                	}
+                	System.out.println(i+" "+Integer.parseInt(strArrayResult[3].substring(strArrayResult[3].indexOf("|")+1, strArrayResult[3].lastIndexOf("|")).replaceAll(" ", "")));
+                	totalCount = strArrayResult[3].substring(strArrayResult[3].indexOf("|")+1, strArrayResult[3].lastIndexOf("|")).replaceAll(" ", "");
                 }
                 resultList.add(i, totalCount);
     		} catch (Exception e) {
@@ -103,7 +128,6 @@ public class DbpediaData
             }
     		
     	}
-    	
     	
     	
     	
@@ -271,27 +295,22 @@ public class DbpediaData
             				//write the class file
             				File file = new File("lib/data/" + counter);
                 			file.createNewFile();
-                			
+                			ArrayList<String> toWrite = new ArrayList<String>();
                 			strArrayResult[i] = strArrayResult[i].substring(strArrayResult[i].indexOf("\"")+1, strArrayResult[i].lastIndexOf("\""));
                 			strArrayResult[i] = strArrayResult[i].replaceAll("_", " ");
                 			strArrayResult[i] = Character.toUpperCase(strArrayResult[i].charAt(0)) + strArrayResult[i].substring(1, strArrayResult[i].length());
-                			BufferedWriter fw = new BufferedWriter(new FileWriter(file.getAbsoluteFile(), true));
-                			fw.write("\n");
-                			fw.write(strArrayResult[i]);
-                			fw.write("\n");
-                        	fw.write("class");
-                        	fw.write("\n");
-                			fw.write(DbDataClassAbstractHelper(postfix));
-                        	fw.close();
-                        	
+                			toWrite.add("");
+                			toWrite.add(strArrayResult[i]);
+                			toWrite.add("class");
+                        	toWrite.add(DbDataClassAbstractHelper(postfix));
+                        	Files.write(file.toPath(), toWrite, Charset.forName("UTF-8"));
                         	//write the instance file
+                        	toWrite.clear();
                         	file = new File("lib/data/" + ++counter);
                 			file.createNewFile();
-                			fw = new BufferedWriter(new FileWriter(file.getAbsoluteFile(), true));
-                			fw.write("\n");
-                			fw.write(label);
-                        	fw.close();
-                        	
+                			toWrite.add("");
+                			toWrite.add(label);
+                			Files.write(file.toPath(), toWrite, Charset.forName("UTF-8"));
                         	//increment the counter
                         	counter ++;
             			}

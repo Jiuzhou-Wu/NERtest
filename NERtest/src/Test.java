@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 public class Test {
 
-	public static void main(String[] args) throws IOException {
+	public static void test() throws IOException {
 		//调用data folder 里面的三行数据
 		ArrayList<String> content = new ArrayList<String>();
 		List<String> typeList = new ArrayList<String>();
@@ -31,7 +31,7 @@ public class Test {
 						//title = title.substring(11, title.length()-8);
 						content.add(title);
 						//System.out.println(s.get(3));
-						typeList.add(type);
+						typeList.add(filePath.toString());
 						abstracts.add(abs);
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
@@ -40,6 +40,7 @@ public class Test {
 		        }
 		    });
 		}
+//		System.out.println("the one have problem: "+typeList.get(395));
 		ArrayList<String> dbfeatures = DbpediaData.dbFeature(content);
 		Path file = Paths.get("lib\\Result\\test");
 		Files.write(file, dbfeatures, Charset.forName("UTF-8"));
