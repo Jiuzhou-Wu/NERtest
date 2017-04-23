@@ -21,112 +21,188 @@ public class DbpediaData
 {
     static public void main(String[] argv) throws IOException
     {
-//    	int size = 500;
-//    	List<String> content = new ArrayList<String>();
-//    	try(Stream<Path> paths = Files.walk(Paths.get("lib/wiki page"))) {
-//		    paths.forEach(filePath -> {
-//		        if (Files.isRegularFile(filePath)) {
-//		            try {
-//						List<String> s = Files.readAllLines(filePath);
-//						String title = s.get(1);
-//						title = title.substring(11, title.length()-8);
-//						title = title.replaceAll(" ", "_");
-////						title = title.toLowerCase();
-//						content.add(title);
-////						System.out.println(title);
-//					} catch (Exception e) {
-//						// TODO Auto-generated catch block
-////						System.out.println(title);
-//						e.printStackTrace();
-//					}
-//		        }
-//		    });
-//		}
-//    	System.out.println("get data from ontology");
-//    	int numOfClass = 0;
-//    	for(int i = 0; i < Math.min(size, content.size()); i++){
-//    		
-//    		String title = content.get(i);
-//    		
-//    		String result = DbData(title);
-//    		title = title.replaceAll("_", " ");
-////    		System.out.println(result);
-//    		
-//      	    if(result == "instance"){
-//      	    	File file = new File("lib/data/" + (i+501- numOfClass));
-//        		file.createNewFile();
-//      	    	BufferedWriter fw = new BufferedWriter(new FileWriter(file.getAbsoluteFile(), true));
-//            	fw.write("\n");
-//    			fw.write(title);
-//    			fw.write("\n");
-//            	fw.write("instance");
-//            	fw.close();
-//      	    } else {
-//      	    	numOfClass ++ ;
-//      	    	size++;
-//      	    }
-//      	    
-//        	
-//    	}
+    	
+//    	dbFeatureSingle("`Abdu'l-Bah¨¢");
+    	testData();
+
 //    	DbData(1000);
-    	Test.test();
+//    	Test.test();
     	
     }
+    
+    public static boolean isInstanceDefinedUnderOntology(String title){
+    	
+    	String totalCount = "0";
+		String queryStr = "select distinct ?class where { <http://dbpedia.org/resource/"
+				+ title
+				+ "> a ?class filter( regex( str(?class), \"^http://dbpedia.org/ontology/\" ) )} LIMIT 100";
+//		System.out.println(queryStr);
+		try{
+			Query query = QueryFactory.create(queryStr);
+			QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query);
+		
+            // Set the DBpedia specific timeout.
+            ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
+
+            // Execute.
+            ResultSet rs = qexec.execSelect();
+//            
+//            String textResult = "";
+//            String[] strArrayResult;
+            
+            if(rs.hasNext())
+            {
+            	
+//            	textResult = ResultSetFormatter.asText(rs);
+//            	System.out.println(textResult);
+//            	strArrayResult = textResult.split("\n");
+            	
+//            	for(int line = 0; line < strArrayResult.length; line++){
+//            		System.out.println(strArrayResult[line]);
+//            	}
+//            	System.out.println(i+" "+Integer.parseInt(strArrayResult[3].substring(strArrayResult[3].indexOf("|")+1, strArrayResult[3].lastIndexOf("|")).replaceAll(" ", "")));
+//            	totalCount = strArrayResult[3].substring(strArrayResult[3].indexOf("|")+1, strArrayResult[3].lastIndexOf("|")).replaceAll(" ", "");
+            	return true;
+            }
+//            resultList.add(i, totalCount);
+		} catch (Exception e) {
+        	
+            e.printStackTrace();
+        }
+//		return totalCount;
+    	
+    	
+    	return false;
+    }
+    
+    public static boolean isOntologyClass(String title){
+    	String input = title;    //lower case always
+    	String prefix = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>";
+        String queryStr = prefix + 
+        		"SELECT ?label WHERE{"+ 
+  			    "<http://dbpedia.org/ontology/"+input+"> rdfs:label ?label ."+
+  			    "}";
+        Query query = null;
+        try{
+        	query = QueryFactory.create(queryStr);
+        } catch (Exception e) {
+//        	System.out.println("here");
+        	System.out.println("Query Error, the last query tried with the: " + title);
+        	return false;
+//        	e.printStackTrace();
+//            throw new Exception();
+        }
+        
+
+        // Remote execution.
+        try ( QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query) ) {
+            // Set the DBpedia specific timeout.
+            ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
+
+            // Execute.
+            ResultSet rs = qexec.execSelect();
+//            boolean isClass = false;
+            if( rs.hasNext()  ){
+            	//this is a class
+//            	System.out.println(ResultSetFormatter.asText(rs));
+//            	RDFNode n = rs.next().get("label");
+            	return true;
+            	
+            }else{
+            	return false;
+            }
+            
+        } catch (Exception e) {
+        	System.out.println("here");
+        	System.out.println("The last query tried with the: " + title);
+            e.printStackTrace();
+        }
+        return false;
+    } 
+    
+    
+    public static void testData() throws IOException{
+    	int size = 10000;
+    	List<String> content = new ArrayList<String>();
+    	try(Stream<Path> paths = Files.walk(Paths.get("lib/WekiPages"))) {
+		    paths.forEach(filePath -> {
+		        if (Files.isRegularFile(filePath)) {
+		            try {
+						List<String> s = Files.readAllLines(filePath);
+						String title = s.get(1);
+						title = title.substring(11, title.length()-8);
+						title = title.replaceAll(" ", "_");
+//						title = title.toLowerCase();
+						content.add(title);
+//						System.out.println(title);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+//						System.out.println(title);
+						e.printStackTrace();
+					}
+		        }
+		    });
+		}
+    	System.out.println("get data from ontology");
+    	int numOfClass = 0;
+    	int numOfInstance = 0;
+    	for(int i = 0; i < Math.min(size, content.size()); i++){
+    		
+    		String title = content.get(i);
+    		
+//    		String result = DbData(title);
+//    		title = title.replaceAll("_", " ");
+//    		System.out.println(result);
+    		ArrayList<String> toWrite;
+      	    if(!isOntologyClass(title)){
+      	    	
+      	    	if(Integer.parseInt(dbFeatureSingle(title)) > 0){
+      	    		//this is a class for sure!!!!!!!!!
+      	    		File file = new File("lib/data/c_" + numOfClass++);
+      	    		toWrite = new ArrayList<String>();
+        			toWrite.add("");
+        			toWrite.add(title);
+        			toWrite.add("class");
+                	toWrite.add(DbDataClassAbstractHelper(title, false));
+                	Files.write(file.toPath(), toWrite, Charset.forName("UTF-8"));
+                	toWrite.clear();
+      	    	} else if(isInstanceDefinedUnderOntology(title)){
+      	    		File file = new File("lib/data/i_" + numOfInstance++);
+      	    		toWrite = new ArrayList<String>();
+        			toWrite.add("");
+        			toWrite.add(title);
+        			toWrite.add("instance");
+                	toWrite.add(DbDataClassAbstractHelper(title, false));
+                	Files.write(file.toPath(), toWrite, Charset.forName("UTF-8"));
+                	toWrite.clear();
+      	    	}
+      	    	System.out.println("" + i + "/" + Math.min(size, content.size()) + " done; numOfClass:    " + numOfClass);
+      	    	System.out.println("" + i + "/" + Math.min(size, content.size()) + " done; numOfInstance: " + numOfInstance);
+      	    } 
+      	    
+        	
+    	}
+    	System.out.println("im just not happy");
+    }
+    
     
     
     
     public static ArrayList<String> dbFeature(ArrayList<String> titles){
     	
     	ArrayList<String> resultList = new ArrayList<String>(titles.size());
-    	String totalCount = "0";
+//    	String totalCount = "0";
     	
     	
     	for(int i = 0; i<titles.size(); i++){
-    		String title = titles.get(i);
-    		
-    		for(int j = 0; j<title.length(); j++){
-    			if(title.charAt(j)=='\"'){
-    				title = title.replace('\"', ' ');
-    				
+    		for(int j = 0; j<titles.get(i).length(); j++){
+    			if(titles.get(i).charAt(j)=='\"'){
+    				titles.set(i, titles.get(i).replace(" ", "_"));
+				
     			}
     		}
-    		
-    		String prefix = "PREFIX dbo: <http://dbpedia.org/ontology/>"
-    				+ "PREFIX dbr: <http://dbpedia.org/resource/>";
-    		String queryStr = prefix + "select ( count ( distinct ?instance ) AS ?total ) where {?instance dbo:type <http://dbpedia.org/resource/"
-    				+ title.replace(" ", "_")
-    				+ "> } LIMIT 100";
-//    		System.out.println(queryStr);
-    		Query query = QueryFactory.create(queryStr);
-    		try ( QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query) ) {
-                // Set the DBpedia specific timeout.
-                ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
-
-                // Execute.
-                ResultSet rs = qexec.execSelect();
-                
-                String textResult = "";
-                String[] strArrayResult;
-                
-                if(rs.hasNext())
-                {
-                	
-                	textResult = ResultSetFormatter.asText(rs);
-//                	System.out.println(textResult);
-                	strArrayResult = textResult.split("\n");
-                	
-//                	for(int line = 0; line < strArrayResult.length; line++){
-//                		System.out.println(strArrayResult[line]);
-//                	}
-                	System.out.println(i+" "+Integer.parseInt(strArrayResult[3].substring(strArrayResult[3].indexOf("|")+1, strArrayResult[3].lastIndexOf("|")).replaceAll(" ", "")));
-                	totalCount = strArrayResult[3].substring(strArrayResult[3].indexOf("|")+1, strArrayResult[3].lastIndexOf("|")).replaceAll(" ", "");
-                }
-                resultList.add(i, totalCount);
-    		} catch (Exception e) {
-            	
-                e.printStackTrace();
-            }
-    		
+    		titles.set(i, titles.get(i).replace('\"', ' '));
+    		resultList.add(i, dbFeatureSingle(titles.get(i)));
     	}
     	
     	
@@ -134,12 +210,56 @@ public class DbpediaData
     	return resultList;
     }
     
-    
+    public static String dbFeatureSingle(String title){
+//    	String title = titles.get(i);
+    	String totalCount = "0";
+    	
+
+		
+		String prefix = "PREFIX dbo: <http://dbpedia.org/ontology/>"
+				+ "PREFIX dbr: <http://dbpedia.org/resource/>";
+		String queryStr = prefix + "select ( count ( distinct ?instance ) AS ?total ) where {?instance dbo:type <http://dbpedia.org/resource/"
+				+ title
+				+ "> } LIMIT 100";
+//		System.out.println(queryStr);
+		try{
+			Query query = QueryFactory.create(queryStr);
+			QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query);
+		
+            // Set the DBpedia specific timeout.
+            ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
+
+            // Execute.
+            ResultSet rs = qexec.execSelect();
+            
+            String textResult = "";
+            String[] strArrayResult;
+            
+            if(rs.hasNext())
+            {
+            	
+            	textResult = ResultSetFormatter.asText(rs);
+//            	System.out.println(textResult);
+            	strArrayResult = textResult.split("\n");
+            	
+//            	for(int line = 0; line < strArrayResult.length; line++){
+//            		System.out.println(strArrayResult[line]);
+//            	}
+//            	System.out.println(i+" "+Integer.parseInt(strArrayResult[3].substring(strArrayResult[3].indexOf("|")+1, strArrayResult[3].lastIndexOf("|")).replaceAll(" ", "")));
+            	totalCount = strArrayResult[3].substring(strArrayResult[3].indexOf("|")+1, strArrayResult[3].lastIndexOf("|")).replaceAll(" ", "");
+            }
+//            resultList.add(i, totalCount);
+		} catch (Exception e) {
+        	
+            e.printStackTrace();
+        }
+		return totalCount;
+    }
     
     
     
     /**
-     * 
+     * This function was made for get the test data set from the dbpedia. 
      * @param title
      * 
      */
@@ -302,7 +422,7 @@ public class DbpediaData
                 			toWrite.add("");
                 			toWrite.add(strArrayResult[i]);
                 			toWrite.add("class");
-                        	toWrite.add(DbDataClassAbstractHelper(postfix));
+                        	toWrite.add(DbDataClassAbstractHelper(postfix, true));
                         	Files.write(file.toPath(), toWrite, Charset.forName("UTF-8"));
                         	//write the instance file
                         	toWrite.clear();
@@ -333,11 +453,11 @@ public class DbpediaData
         return ;
     }
     
-    private static String DbDataClassAbstractHelper(String uriPostfix){
+    private static String DbDataClassAbstractHelper(String uriPostfix, boolean fromDbData){
     	
     	StringBuffer buffer = new StringBuffer(uriPostfix);
     	
-    	for(int i = 1; i< uriPostfix.length(); i++){
+    	for(int i = 1; i< uriPostfix.length() && fromDbData; i++){
     		if(Character.isUpperCase(uriPostfix.charAt(i))){
     			buffer.setCharAt(i, Character.toLowerCase(uriPostfix.charAt(i)));
     			buffer.insert(i++, '_');
@@ -349,15 +469,15 @@ public class DbpediaData
     			+ "PREFIX dbo: <http://dbpedia.org/ontology/>"
     			+ "PREFIX dbr: <http://dbpedia.org/resource/>";
     	
-    	String queryStr = prefix+"select distinct ?abstract where {dbr:"
+    	String queryStr = prefix+"select distinct ?abstract where {<http://dbpedia.org/resource/"
         		+ uriPostfix
-        		+ " dbo:abstract ?abstract FILTER (LANG(?abstract) = \"en\")} LIMIT 1";
-//    	System.out.println(uriPostfix);
-    	
-    	
-    	Query query = QueryFactory.create(queryStr);
-    	
-        try ( QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query) ) {
+        		+ "> dbo:abstract ?abstract FILTER (LANG(?abstract) = \"en\")} LIMIT 1";
+
+        try {
+        	
+        	Query query = QueryFactory.create(queryStr);
+        	QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query);
+        	
         	 ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
              
              // Execute.
@@ -375,7 +495,7 @@ public class DbpediaData
              }
         	
         }catch(Exception e) {
-        	
+        	System.out.println("The last query tried: " + queryStr);
             e.printStackTrace();
         }
     	
