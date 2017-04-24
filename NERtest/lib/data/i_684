@@ -1,0 +1,4 @@
+
+Plan_9_from_Bell_Labs
+instance
+Plan 9 from Bell Labs is a distributed operating system, originally developed by the Computing Sciences Research Center at Bell Labs between the mid-1980s and 2002. It takes some of the principles of Unix, developed in the same research group, but extends these to a networked environment with graphics terminals. In Plan 9, virtually all computing resources, including files, network connections, and peripheral devices, are represented through the file system rather than specialized interfaces. A unified network protocol called 9P ties a network of computers running Plan 9 together, allowing them to share all resources so represented. The name Plan 9 from Bell Labs is a reference to the Ed Wood 1959 cult science fiction Z-movie Plan 9 from Outer Space. Also, Glenda, the Plan 9 Bunny, is presumably a reference to Wood's film Glen or Glenda. The system continues to be used and developed by operating system researchers and hobbyists.
