@@ -137,7 +137,7 @@ public class StanfordNER
 		
 	}
 	
-	public static List<String> toString(ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map, List<String> content, List<String> titleStr, List<String> type, List<String> dbFeatures){
+	public static List<String> toString(ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map, List<String> content, List<String> titleStr, List<String> type, List<String> dbFeatures,  List<String> patterns){
 		map = capitalization(content,map);
 		List<String> s = new ArrayList<String>();
 		s.add("@relation wekipagesClassify\n");
@@ -154,14 +154,16 @@ public class StanfordNER
 		s.add("@attribute notAlpha numeric");
 		s.add("@attribute properNoun numeric");
 		s.add("@attribute dbFeature numeric");
+		s.add("@attribute startNNP numeric");
+		s.add("@attribute dtNNvbz numeric");
 		s.add("@attribute class {class, instance}\n");
 		
 		s.add("@data");
 		
 		for(int i=0;i<content.size();i++){
 			LinkedHashMap<String,LinkedHashSet<String>> cur = map.get(i);
-			String nerFeatures = "'"+content.get(i).replaceAll("'", "\\\\'") + "',";
-			//String nerFeatures = "";
+			//String nerFeatures = "'"+content.get(i).replaceAll("'", "\\\\'") + "',";
+			String nerFeatures = "";
 			//boolean flag = false;
 			if(cur.containsKey("LOCATION")){
 				nerFeatures = nerFeatures + "1,";
@@ -229,7 +231,9 @@ public class StanfordNER
 			
 			nerFeatures = nerFeatures + titleStr.get(i);
 			
-			//nerFeatures = nerFeatures + dbFeatures.get(i);
+			nerFeatures = nerFeatures + dbFeatures.get(i) + ",";
+			
+			nerFeatures = nerFeatures + patterns.get(i);
 			
 			nerFeatures = nerFeatures + type.get(i);
 			/*

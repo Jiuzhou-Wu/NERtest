@@ -12,458 +12,910 @@
 @attribute notAlpha numeric
 @attribute properNoun numeric
 @attribute dbFeature numeric
+@attribute startNNP numeric
+@attribute dtNNvbz numeric
 @attribute class {class, instance}
 
 @data
-'Academic conference',0,0,0,0,0,0,0,0,0,0,0,class
-'Aa (architect)',0,0,0,0,0,0,0,0,0,1,0,instance
-'National Basketball Association',0,0,1,0,0,0,0,1,0,0,0,instance
-'Bay',0,0,0,0,0,0,0,0,0,0,0,class
-'Alexander Horst',0,0,0,0,0,0,0,1,0,0,0,instance
-'Aircraft',0,0,0,0,0,0,0,0,0,0,0,class
-'Bombay Sapphire',1,0,0,0,0,0,0,1,0,0,0,instance
-'Biological database',0,0,0,0,0,0,0,0,0,0,0,class
-'Conserved Domain Database',0,0,0,0,0,0,0,1,0,0,0,instance
-'Adenylyl cyclase',0,0,0,0,0,0,0,0,0,0,0,instance
-'Blue crane',0,0,0,0,0,0,0,0,0,0,0,instance
-'Airbus A300',0,0,1,0,0,0,0,1,0,0,0,instance
-'Lou Ferrigno',0,1,0,0,0,0,0,1,0,0,0,instance
-'Bone',0,0,0,0,0,0,0,0,0,0,0,class
-'Pubis (bone)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Book',0,0,0,0,0,0,0,0,0,0,0,class
-'A Modest Proposal',0,0,0,0,0,0,0,1,0,0,0,instance
-'Bowling league',0,0,0,0,0,0,0,0,0,0,0,class
-'NCAA Bowling Championship',0,0,0,0,0,0,0,1,0,0,0,instance
-'Airline',0,0,0,0,0,0,0,0,0,0,0,class
-'Bobby Czyz',0,1,0,0,0,0,0,1,0,0,0,instance
-'Entorhinal cortex',0,0,0,0,0,0,0,0,0,0,0,instance
-'Brewery',0,0,0,0,0,0,0,0,0,0,0,class
-'Green Man Brewery',0,0,0,0,0,0,0,1,0,0,0,instance
-'Bridge',0,0,0,0,0,0,0,0,0,0,0,class
-'Dumbarton Bridge (California)',1,0,0,0,0,0,0,1,0,1,0,instance
-'Broadcast network',0,0,0,0,0,0,0,0,0,0,0,class
-'American Airlines',0,0,1,0,0,0,0,1,1,0,0,instance
-'Australian Broadcasting Corporation',0,0,0,0,0,0,0,1,0,0,0,instance
-'Broadcaster',0,0,0,0,0,0,0,0,0,0,0,class
-'Australian Broadcasting Corporation',0,0,0,0,0,0,0,1,0,0,0,instance
-'Abbotsford House',0,0,1,0,0,0,0,1,0,0,0,instance
-'Ahmedabad Municipal Transport Service',0,0,1,0,0,0,0,1,0,0,0,instance
-'Airport',0,0,0,0,0,0,0,0,0,0,0,class
-'Canadian Junior Football League',0,0,1,0,0,0,0,1,0,0,0,instance
-'Detroit Wheels',0,0,0,0,0,0,0,1,0,0,0,instance
-'Canal',0,0,0,0,0,0,0,0,0,0,1,class
-'Erie Canal',0,0,0,0,0,0,0,1,0,0,0,instance
-'Hans Rein',0,0,0,0,0,0,0,1,0,0,0,instance
-'Cardinal',0,0,0,0,0,0,0,0,0,0,0,class
-'Bernard Francis Law',0,1,0,0,0,0,0,1,0,0,0,instance
-'Cartoon',0,0,0,0,0,0,0,0,0,0,0,class
-'Amsterdam Airport Schiphol',1,0,0,0,0,0,0,1,0,0,0,instance
-'Case',0,0,0,0,0,0,0,0,0,0,0,class
-'Marbury v. Madison',0,1,0,0,0,0,0,0,0,0,0,instance
-'Knaresborough Castle',0,0,0,0,0,0,0,1,0,0,0,instance
-'Cave',0,0,0,0,0,0,0,0,0,0,0,class
-'Boho Caves',0,0,0,0,0,0,0,1,0,0,0,instance
-'2001 Mars Odyssey',0,0,0,0,0,0,0,0,0,1,0,instance
-'Album',0,0,0,0,0,0,0,0,0,0,0,class
-'Cheese',0,0,0,0,0,0,0,0,0,0,0,class
-'Chef',0,0,0,0,0,0,0,0,0,0,0,class
-'Art Smith (chef)',0,1,0,0,0,0,0,0,0,1,0,instance
-'Chemical compound',0,0,0,0,0,0,0,0,0,0,0,class
-'4-Phenyl-4-(1-piperidinyl)cyclohexanol',0,0,0,0,0,0,0,0,0,1,0,instance
-'Chemical substance',0,0,0,0,0,0,0,0,0,0,0,class
-'4-Phenyl-4-(1-piperidinyl)cyclohexanol',0,0,0,0,0,0,0,0,0,1,0,instance
-'...Baby One More Time (album)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Asser',0,0,0,0,0,0,0,0,0,0,1,instance
-'City',0,0,0,0,0,0,0,0,0,0,0,class
-'Gerard Hengeveld',0,1,0,0,0,0,0,1,0,0,0,instance
-'The Bard (Sibelius)',0,0,1,0,0,0,0,1,0,1,0,instance
-'Asser',0,0,0,0,0,0,0,0,0,0,1,instance
-'Roman Catholic Archdiocese of Armagh',0,0,1,0,0,0,0,1,0,0,0,instance
-'Isoetales',0,0,0,0,0,0,0,0,1,0,1,instance
-'Coach',0,0,0,0,0,0,0,0,0,0,0,class
-'College',0,0,0,0,0,0,0,0,0,0,0,class
-'Pembroke College, Cambridge',1,0,1,0,0,0,0,1,0,1,0,instance
-'International Conference on Automated Software Engineering',0,0,1,0,0,0,0,1,0,0,0,instance
-'Black',0,0,0,0,0,0,0,0,0,0,0,instance
-'Comedian',0,0,0,0,0,0,0,0,0,0,0,class
-'Billy Crystal',0,0,0,0,0,0,0,1,0,0,0,instance
-'Marx Brothers',0,0,1,0,0,0,0,1,1,0,0,instance
-'Comic strip',0,0,0,0,0,0,0,0,0,0,0,class
-'Ambassador',0,0,0,0,0,0,0,0,0,0,0,class
-'DirkJan',0,0,0,0,0,0,0,0,0,0,1,instance
-'Barb Wire',0,0,0,0,0,0,0,1,0,0,0,instance
-'Gerhard (cartoonist)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Podocarpus latifolius',0,0,0,0,0,0,0,0,0,0,0,instance
-'Constellation',0,0,0,0,0,0,0,0,0,0,0,class
-'Anthony H. Gioia',0,1,0,0,0,0,0,1,0,0,0,instance
-'Continent',0,0,0,0,0,0,0,0,0,0,0,class
-'Convention',0,0,0,0,0,0,0,0,0,0,0,class
-'Biathlon World Championships',0,0,0,0,0,0,0,1,1,0,0,instance
-'Country',0,0,0,0,0,0,0,0,0,0,0,class
-'Crater',0,0,0,0,0,0,0,0,0,0,0,class
-'County Ground, Lakenham',1,0,0,0,0,0,0,1,0,1,0,instance
-'American Twenty20 Championship',0,0,0,0,0,0,0,1,0,0,0,instance
-'Glamorgan County Cricket Club',0,0,1,0,0,0,0,1,0,0,0,instance
-'Davy (Hampshire cricketer)',1,0,0,0,0,0,0,0,0,1,0,instance
-'Crustacean',0,0,0,0,0,0,0,0,0,0,0,class
-'Dan Shamash',0,1,0,0,0,0,0,1,0,0,0,instance
-'Branchiopoda',0,0,0,0,0,0,0,0,0,0,1,instance
-'Kohlrabi',0,0,0,0,0,0,0,0,0,0,0,instance
-'Curler',0,0,0,0,0,0,0,0,0,0,0,class
-'Peja Lindholm',0,0,0,0,0,0,0,1,0,0,0,instance
-'Scottish Women\'s Curling Championship',0,0,0,0,0,0,0,1,0,1,0,instance
-'Currency',0,0,0,0,0,0,0,0,0,0,0,class
-'East Caribbean dollar',0,0,0,0,0,0,0,0,0,0,0,instance
-'Cycad',0,0,0,0,0,0,0,0,0,0,0,class
-'Zamia loddigesii',0,0,0,0,0,0,0,0,1,0,0,instance
-'Crocodile Trophy',0,0,0,0,0,0,0,1,0,0,0,instance
-'Cycling team',0,0,0,0,0,0,0,0,0,0,0,class
-'Dam',0,0,0,0,0,0,0,0,0,0,0,class
-'Hoover Dam',0,0,0,0,0,0,0,1,0,0,0,instance
-'American Football League',0,0,1,0,0,0,0,1,0,0,0,instance
-'Bob Anderson (darts player)',0,1,0,0,0,0,0,0,0,1,0,instance
-'Conserved Domain Database',0,0,0,0,0,0,0,1,0,0,0,instance
-'Device',0,0,0,0,0,0,0,0,0,0,0,class
-'Roman Catholic Archdiocese of Armagh',0,0,1,0,0,0,0,1,0,0,0,instance
-'Disease',0,0,0,0,0,0,0,0,0,0,0,class
-'Abortion',0,0,0,0,0,0,0,0,0,0,0,instance
-'Amoxicillin',0,0,0,0,0,0,0,0,0,0,1,instance
-'1667 Dubrovnik earthquake',1,0,0,0,0,0,0,0,0,1,0,instance
-'Economist',0,0,0,0,0,0,0,0,0,0,0,class
-'Richard E. Wagner',0,1,0,0,0,0,0,1,0,0,0,instance
-'Election',0,0,0,0,0,0,0,0,0,0,0,class
-'Optic vesicle',0,0,0,0,0,0,0,0,0,0,0,instance
-'Cummins B Series engine',0,0,0,0,0,0,0,0,0,0,0,instance
-'Engineer',0,0,0,0,0,0,0,0,0,0,0,class
-'Enzyme',0,0,0,0,0,0,0,0,0,0,0,class
-'Adenylyl cyclase',0,0,0,0,0,0,0,0,0,0,0,instance
-'All Night Long (Simon Mathew song)',0,0,1,0,0,0,0,0,0,1,0,instance
-'Event',0,0,0,0,0,0,0,0,0,0,0,class
-'1986 United States bombing of Libya',1,0,0,0,0,0,0,0,0,1,0,instance
-'Fashion',0,0,0,0,0,0,0,0,0,0,0,class
-'Richard Edwards (fashion company)',0,1,0,0,0,0,0,0,0,1,0,instance
-'Academic journal',0,0,0,0,0,0,0,0,0,0,0,class
-'Fern',0,0,0,0,0,0,0,0,0,0,0,class
-'Pyrrosia rupestris',0,0,0,0,0,0,0,0,1,0,0,instance
-'Barb Wire',0,0,0,0,0,0,0,1,0,0,0,instance
-'Amphibian',0,0,0,0,0,0,0,0,0,0,0,class
-'Actrius',0,0,0,0,0,0,0,0,0,0,1,instance
-'Arab Film Festival',0,0,0,0,0,0,0,1,0,0,0,instance
-'Fish',0,0,0,0,0,0,0,0,0,0,0,class
-'Flowering plant',0,0,0,0,0,0,0,0,0,0,0,class
-'Merlot',0,0,0,0,0,0,0,0,0,0,1,instance
-'Food',0,0,0,0,0,0,0,0,0,0,0,class
-'Bombay Sapphire',1,0,0,0,0,0,0,1,0,0,0,instance
-'Septoria',0,0,0,0,0,0,0,0,0,0,1,instance
-'John Leonard (Gaelic footballer)',0,1,0,0,0,0,0,0,0,1,0,instance
-'Game',0,0,0,0,0,0,0,0,0,0,0,class
-'Acquire',0,0,0,0,0,0,0,0,0,0,0,instance
-'Garden',0,0,0,0,0,0,0,0,0,0,0,class
-'Fam78b',0,0,0,0,0,0,0,0,0,0,0,instance
-'Ginkgo',0,0,0,0,0,0,0,0,0,0,0,class
-'Burnout (ride)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Cheirophyllum',0,0,0,0,0,0,0,0,0,0,1,instance
-'Given name',0,0,0,0,0,0,0,0,0,0,0,class
-'Adrian',0,0,0,0,0,0,0,0,0,0,0,instance
-'Klondike Glacier',0,0,0,0,0,0,0,1,0,0,0,instance
-'Golf course',0,0,0,0,0,0,0,0,0,0,0,class
-'San Roque Club',0,0,1,0,0,0,0,1,0,0,0,instance
-'National Golf Foundation',0,0,1,0,0,0,0,1,0,0,0,instance
-'Greg Norman',0,1,0,0,0,0,0,1,0,0,0,instance
-'Toto Japan Classic',1,0,0,0,0,0,0,1,0,0,0,instance
-'California Department of Transportation',0,0,1,0,0,0,0,1,0,0,0,instance
-'Governor',0,0,0,0,0,0,0,0,0,0,0,class
-'Kenneth Mitchell (politician)',0,1,0,0,0,0,0,0,0,1,0,instance
-'Adrenal gland',0,0,0,0,0,0,0,0,0,0,0,instance
-'Grape',0,0,0,0,0,0,0,0,0,0,0,class
-'Merlot',0,0,0,0,0,0,0,0,0,0,1,instance
-'Group',0,0,0,0,0,0,0,0,0,0,0,class
-'Gilbert (band)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Guitarist',0,0,0,0,0,0,0,0,0,0,0,class
-'Animal',0,0,0,0,0,0,0,0,0,0,0,class
-'Kipper (musician)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Alaina Johnson',0,1,0,0,0,0,0,1,0,0,0,instance
-'Paula Fynn',0,1,0,0,0,0,0,1,0,0,0,instance
-'Historian',0,0,0,0,0,0,0,0,0,0,0,class
-'Alan I. Marcus',0,1,0,0,0,0,0,1,0,0,0,instance
-'Exeter Cathedral',0,0,1,0,0,0,0,1,0,0,0,instance
-'Balmoral Castle',1,0,0,0,0,0,0,1,0,0,0,instance
-'Holiday',0,0,0,0,0,0,0,0,0,0,0,class
-'All Souls\' Day',0,0,0,0,0,1,0,1,0,1,0,instance
-'(Blooper) Bunny',1,0,0,0,0,0,0,1,0,1,0,instance
-'Horse',0,0,0,0,0,0,0,0,0,0,0,class
-'Darley Arabian',0,0,0,0,0,0,0,1,0,0,0,instance
-'Horse trainer',0,0,0,0,0,0,0,0,0,0,0,class
-'Hospital',0,0,0,0,0,0,0,0,0,0,0,class
-'Algorithms (journal)',0,0,0,0,0,0,0,0,0,1,0,instance
-'John Sealy Hospital',0,0,1,0,0,0,0,1,0,0,0,instance
-'Hotel',0,0,0,0,0,0,0,0,0,0,0,class
-'Fam78b',0,0,0,0,0,0,0,0,0,0,0,instance
-'Information appliance',0,0,0,0,0,0,0,0,0,0,0,class
-'Acorn Electron',0,0,1,0,0,0,0,1,0,0,0,instance
-'Infrastructure',0,0,0,0,0,0,0,0,0,0,0,class
-'Amsterdam Airport Schiphol',1,0,0,0,0,0,0,1,0,0,0,instance
-'Roller Hockey International',0,0,1,0,0,0,0,1,0,0,0,instance
-'Ancyra (genus)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Kipper (musician)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Island',0,0,0,0,0,0,0,0,0,0,0,class
-'Jockey (horse racer)',0,0,0,0,0,0,0,0,0,1,0,class
-'Journalist',0,0,0,0,0,0,0,0,0,0,0,class
-'Judge',0,0,0,0,0,0,0,0,0,0,0,class
-'National Lacrosse League',0,0,1,0,0,0,0,1,0,0,0,instance
-'Rich Catton',0,1,0,0,0,0,0,1,0,0,0,instance
-'Lake',0,0,0,0,0,0,0,0,0,0,0,class
-'Arabian Sea',0,0,0,0,0,0,0,1,0,0,0,instance
-'Launch pad',0,0,0,0,0,0,0,0,0,0,0,class
-'Jiuquan Launch Area 4',0,0,0,0,0,0,0,0,0,1,0,instance
-'Law firm',0,0,0,0,0,0,0,0,0,0,0,class
-'Barlow Lyde & Gilbert',0,0,1,0,0,0,0,1,0,1,0,instance
-'Legal Case',0,0,0,0,0,0,0,1,0,0,0,class
-'Marbury v. Madison',0,1,0,0,0,0,0,0,0,0,0,instance
-'Legislature',0,0,0,0,0,0,0,0,0,0,0,class
-'Bundestag',0,0,0,0,0,0,0,0,0,0,1,instance
-'Library of Alexandria',1,0,0,0,0,0,0,1,0,0,0,instance
-'Lateral collateral ligament of ankle joint',0,0,0,0,0,0,0,0,0,0,0,instance
-'Lighthouse',0,0,0,0,0,0,0,0,0,0,0,class
-'Annie (locomotive)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Lymph',0,0,0,0,0,0,0,0,0,0,0,class
-'Deep inguinal lymph nodes',0,0,0,0,0,0,0,0,1,0,0,instance
-'Magazine',0,0,0,0,0,0,0,0,0,0,0,class
-'Emin Boztepe',0,1,0,0,0,0,0,1,0,0,0,instance
-'Mayor',0,0,0,0,0,0,0,0,0,0,0,class
-'Methanomicrobiales',0,0,0,0,0,0,0,0,1,0,1,instance
-'Airbus A300',0,0,1,0,0,0,0,1,0,0,0,instance
-'Medician',0,0,0,0,0,0,0,0,0,0,0,class
-'David Charles (physician)',0,1,0,0,0,0,0,0,0,1,0,instance
-'1986 United States bombing of Libya',1,0,0,0,0,0,0,0,0,1,0,instance
-'Architect',0,0,0,0,0,0,0,0,0,0,0,class
-'Kenilworth Castle',1,0,0,0,0,0,0,1,0,0,0,instance
-'Afghan Armed Forces',0,0,0,0,0,0,0,1,1,0,0,instance
-'RINGS King of Kings Tournament 1999',0,0,1,0,0,1,0,0,0,1,0,instance
-'International Fight League',0,0,1,0,0,0,0,1,0,0,0,instance
-'Model',0,0,0,0,0,0,0,0,0,0,0,class
-'Monarch',0,0,0,0,0,0,0,0,0,0,0,class
-'Monument',0,0,0,0,0,0,0,0,0,0,0,class
-'Civil Rights Memorial',0,0,0,0,0,0,0,1,0,0,0,instance
-'Breutelia pendula',0,0,0,0,0,0,0,0,0,0,0,instance
-'Honda Dio',0,0,1,0,0,0,0,1,0,0,0,instance
-'British Superbike Championship Support Series',0,0,0,0,0,0,0,1,0,0,0,instance
-'Administrative region',0,0,0,0,0,0,0,0,0,0,0,class
-'Abbotsford House',0,0,1,0,0,0,0,1,0,0,0,instance
-'1960 USAC Road Racing Championship season',0,0,1,0,0,0,0,0,0,1,0,instance
-'Mountain',0,0,0,0,0,0,0,0,0,0,0,class
-'Aoraki / Mount Cook',0,0,0,0,0,0,0,1,0,1,0,instance
-'Mountain pass',0,0,0,0,0,0,0,0,0,0,0,class
-'Mountain range',0,0,0,0,0,0,0,0,0,0,0,class
-'Muscle',0,0,0,0,0,0,0,0,0,0,0,class
-'Abductor digiti minimi muscle of hand',0,0,0,0,0,0,0,0,0,0,0,instance
-'Museum',0,0,0,0,0,0,0,0,0,0,0,class
-'Music festival',0,0,0,0,0,0,0,0,0,0,0,class
-'BoomTown Fair',0,0,0,0,0,0,0,1,0,0,0,instance
-'A cappella',0,0,0,0,0,0,0,0,0,0,0,instance
-'Musical',0,0,0,0,0,0,0,0,0,0,0,class
-'Aorta',0,0,0,0,0,0,0,0,0,0,0,instance
-'Adonis (musician)',0,0,0,0,0,0,0,0,0,1,0,instance
-'...Baby One More Time (album)',0,0,0,0,0,0,0,0,0,1,0,instance
-'1667 Dubrovnik earthquake',1,0,0,0,0,0,0,0,0,1,0,instance
-'Nerve',0,0,0,0,0,0,0,0,0,0,0,class
-'2001 Mars Odyssey',0,0,0,0,0,0,0,0,0,1,0,instance
-'Pudendal nerve',0,0,0,0,0,0,0,0,0,0,0,instance
-'Bianca Reddy',0,1,0,0,0,0,0,1,0,0,0,instance
-'Boston Herald',0,0,1,0,0,0,0,1,0,0,0,instance
-'Noble',0,0,0,0,0,0,0,0,0,0,0,class
-'Churches Uniting in Christ',1,0,0,0,0,0,0,1,0,0,0,instance
-'Novel',0,0,0,0,0,0,0,0,0,0,0,class
-'Artist',0,0,0,0,0,0,0,0,0,0,0,class
-'Dickson McCunn trilogy',0,0,0,0,0,0,0,0,0,0,0,instance
-'Achille Casanova',0,0,0,0,0,0,0,1,0,0,0,instance
-'Hungary at the 1968 Winter Olympics',0,0,0,0,0,1,0,0,0,1,0,instance
-'1906 Intercalated Games',0,0,0,0,0,0,0,0,1,1,0,instance
-'Adonis (musician)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Gilbert (band)',0,0,0,0,0,0,0,0,0,1,0,instance
-'UniKL HC',0,0,0,0,0,0,0,1,0,0,0,instance
-'Park',0,0,0,0,0,0,0,0,0,0,0,class
-'Deception Pass',0,0,0,0,0,0,0,1,1,0,0,instance
-'Periodical literature',0,0,0,0,0,0,0,0,0,0,0,class
-'Algorithms (journal)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Play',0,0,0,0,0,0,0,0,0,0,0,class
-'A Doll\'s House',0,0,1,0,0,0,0,1,0,1,0,instance
-'Country Gentlemen discography',0,0,0,0,0,0,0,0,0,0,0,instance
-'Poet',0,0,0,0,0,0,0,0,0,0,0,class
-'Jeremy Gaubert',0,1,0,0,0,0,0,1,0,0,0,instance
-'Political party',0,0,0,0,0,0,0,0,0,0,0,class
-'African National Congress',0,0,1,0,0,0,0,1,0,0,0,instance
-'Campeonato Abierto de Hurlingham',0,0,0,0,0,0,0,1,0,0,0,instance
-'Pope Agatho',0,0,0,0,0,0,0,1,0,0,0,instance
-'Power station',0,0,0,0,0,0,0,0,0,0,0,class
-'Presenter',0,0,0,0,0,0,0,0,0,0,0,class
-'Hope (painting)',0,0,0,0,0,0,0,0,0,1,0,instance
-'President',0,0,0,0,0,0,0,0,0,0,0,class
-'John Oponjo Benjamin',0,1,0,0,0,0,0,1,0,0,0,instance
-'Prison',0,0,0,0,0,0,0,0,0,0,0,class
-'HM Prison Dartmoor',0,0,0,0,0,0,0,1,0,0,0,instance
-'Programming language',0,0,0,0,0,0,0,0,0,0,0,class
-'Project',0,0,0,0,0,0,0,0,0,0,0,class
-'Asteroid',0,0,0,0,0,0,0,0,0,0,0,class
-'INDECT',0,0,0,0,0,0,0,0,0,0,0,instance
-'Protected area',0,0,0,0,0,0,0,0,0,0,0,class
-'Dartmoor',0,0,0,0,0,0,0,0,0,0,1,instance
-'Docklands Light Railway',0,0,0,0,0,0,0,1,0,0,0,instance
-'Race',0,0,0,0,0,0,0,0,0,0,0,class
-'Darley Arabian',0,0,0,0,0,0,0,1,0,0,0,instance
-'Race track',0,0,0,0,0,0,0,0,0,0,0,class
-'Adana Ye?iloba Hippodrome',0,0,0,0,0,0,0,1,0,1,0,instance
-'Adana Ye?iloba Hippodrome',0,0,0,0,0,0,0,1,0,1,0,instance
-'Don Geronimo',0,1,0,0,0,0,0,1,0,0,0,instance
-'Radio program',0,0,0,0,0,0,0,0,0,0,0,class
-'Astronaut',0,0,0,0,0,0,0,0,0,0,0,class
-'Radio station',0,0,0,0,0,0,0,0,0,0,0,class
-'London Post Office Railway',0,0,1,0,0,0,0,1,0,0,0,instance
-'Minam Station',0,0,0,0,0,0,0,1,0,0,0,instance
-'Record label',0,0,0,0,0,0,0,0,0,0,0,class
-'Catherine Coleman',0,1,0,0,0,0,0,1,0,0,0,instance
-'Harthouse',0,0,0,0,0,0,0,0,0,0,1,instance
-'Region',0,0,0,0,0,0,0,0,0,0,0,class
-'Abraham',0,0,0,0,0,0,0,0,0,0,1,instance
-'INDECT',0,0,0,0,0,0,0,0,0,0,0,instance
-'River',0,0,0,0,0,0,0,0,0,0,0,class
-'Alabama River',1,0,0,0,0,0,0,1,0,0,0,instance
-'Road',0,0,0,0,0,0,0,0,0,0,0,class
-'Los Alamitos Circle',0,0,1,0,0,0,0,1,0,0,0,instance
-'Rocket',0,0,0,0,0,0,0,0,0,0,0,class
-'Roller coaster',0,0,0,0,0,0,0,0,0,0,0,class
-'Mumbo Jumbo (roller coaster)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Peter Berger (rower)',0,1,0,0,0,0,0,0,0,1,0,instance
-'Royalty',0,0,0,0,0,0,0,0,0,0,0,class
-'Rugby league',0,0,0,0,0,0,0,0,0,0,0,class
-'Rugby player',0,0,0,0,0,0,0,0,0,0,0,class
-'Satellite',0,0,0,0,0,0,0,0,0,0,0,class
-'Ontario Australian Football League Division 2',0,0,1,0,0,0,0,0,0,1,0,instance
-'2001 Mars Odyssey',0,0,0,0,0,0,0,0,0,1,0,instance
-'Scientist',0,0,0,0,0,0,0,0,0,0,0,class
-'David Charles (physician)',0,1,0,0,0,0,0,0,0,1,0,instance
-'Alec Sokolow',0,1,0,0,0,0,0,1,0,0,0,instance
-'John Hogg',0,1,0,0,0,0,0,1,0,0,0,instance
-'Settlement',0,0,0,0,0,0,0,0,0,0,0,class
-'Ship',0,0,0,0,0,0,0,0,0,0,0,class
-'American submarine NR-1',0,0,0,0,0,0,0,0,0,1,0,instance
-'Shopping mall',0,0,0,0,0,0,0,0,0,0,0,class
-'Tampines Mall',0,0,1,0,0,0,0,1,0,0,0,instance
-'Single',0,0,0,0,0,0,0,0,0,0,0,class
-'Ballad of the Green Berets',0,0,1,0,0,0,0,0,0,0,0,instance
-'Lundy',0,0,0,0,0,0,0,0,0,0,1,instance
-'Skater',0,0,0,0,0,0,0,0,0,0,0,class
-'Brisbane Lions',0,0,0,0,0,0,0,1,0,0,0,instance
-'Enrico Fabris',0,0,0,0,0,0,0,1,0,0,0,instance
-'Pernilla Wiberg',1,0,0,0,0,0,0,1,0,0,0,instance
-'Skyscraper',0,0,0,0,0,0,0,0,0,0,0,class
-'Perret tower (Grenoble)',1,0,0,0,0,0,0,0,0,1,0,instance
-'Mark Selby',0,1,0,0,0,0,0,1,0,0,0,instance
-'Ian McCulloch (snooker player)',0,1,0,0,0,0,0,0,0,1,0,instance
-'Snooker world rankings 2005/2006',0,0,0,0,0,0,0,0,0,1,0,instance
-'Ken Barlow',0,1,0,0,0,0,0,1,0,0,0,instance
-'A.C. Chievo Verona',0,0,1,0,0,0,0,1,0,0,0,instance
-'Angus Abbey',0,0,0,0,0,0,0,1,0,0,0,instance
-'Abel Ferreira',0,0,0,0,0,0,0,1,0,0,0,instance
-'1986 United States bombing of Libya',1,0,0,0,0,0,0,0,0,1,0,instance
-'National Pro Fastpitch',0,0,0,0,0,0,0,1,0,0,0,instance
-'Solar eclipse',0,0,0,0,0,0,0,0,0,0,0,class
-'Solar eclipse of August 31, 1913',0,0,0,0,0,1,0,0,0,1,0,instance
-'Song',0,0,0,0,0,0,0,0,0,0,0,class
-'America the Beautiful',0,0,0,0,0,0,0,0,0,0,0,instance
-'Space Shuttle Atlantis',0,0,0,0,0,0,0,1,0,0,0,instance
-'Space station',0,0,0,0,0,0,0,0,0,0,0,class
-'International Space Station',0,0,0,0,0,0,0,1,0,0,0,instance
-'Spacecraft',0,0,0,0,0,0,0,0,0,0,0,class
-'World of Outlaws Late Model Series',0,0,0,0,0,0,0,1,0,0,0,instance
-'Deep Space 1',0,0,0,0,0,0,0,0,0,1,0,instance
-'Species',0,0,0,0,0,0,0,0,0,0,0,class
-'Conference League',0,0,0,0,0,0,0,1,0,0,0,instance
-'Bob Cooper (speedway rider)',0,1,0,0,0,0,0,0,0,1,0,instance
-'Yarmouth Bloaters',0,0,1,0,0,0,0,1,1,0,0,instance
-'Sport',0,0,0,0,0,0,0,0,0,0,0,class
-'Hungary at the 1968 Winter Olympics',0,0,0,0,0,1,0,0,0,1,0,instance
-'Sports league',0,0,0,0,0,0,0,0,0,0,0,class
-'American Football League',0,0,1,0,0,0,0,1,0,0,0,instance
-'Ford GT40',0,0,0,0,0,0,0,1,0,0,0,instance
-'Abel Ferreira',0,0,0,0,0,0,0,1,0,0,0,instance
-'A.C. Chievo Verona',0,0,1,0,0,0,0,1,0,0,0,instance
-'UniKL HC',0,0,0,0,0,0,0,1,0,0,0,instance
-'Daryl Selby',0,1,0,0,0,0,0,1,0,0,0,instance
-'Stadium',0,0,0,0,0,0,0,0,0,0,0,class
-'Station',0,0,0,0,0,0,0,0,0,0,0,class
-'Bethnal Green tube station',0,0,0,0,0,0,0,0,0,0,0,instance
-'Stream',0,0,0,0,0,0,0,0,0,0,0,class
-'Alabama River',1,0,0,0,0,0,0,1,0,0,0,instance
-'Cummins B Series engine',0,0,0,0,0,0,0,0,0,0,0,instance
-'Kaiki Nobuhide',0,0,0,0,0,0,0,1,0,0,0,instance
-'Marbury v. Madison',0,1,0,0,0,0,0,0,0,0,0,instance
-'Surname',0,0,0,0,0,0,0,0,0,0,0,class
-'Erik Lindh',0,1,0,0,0,0,0,1,0,0,0,instance
-'Award',0,0,0,0,0,0,0,0,0,0,0,class
-'A Thing About Machines',0,0,1,0,0,0,0,1,0,0,0,instance
-'Beverly Hills, 90210 (season 7)',1,0,0,0,0,0,0,0,0,1,0,instance
-'ALF Tales',0,0,0,0,0,0,0,1,1,0,0,instance
-'Television station',0,0,0,0,0,0,0,0,0,0,0,class
-'BBC News (TV channel)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Dawson (actor)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Academy Award for Best Production Design',0,0,0,0,0,0,0,1,0,0,0,instance
-'Barbican Centre',0,0,0,0,0,0,0,1,0,0,0,instance
-'2" ',0,0,0,0,0,0,0,0,0,1,0,instance
-'A cappella',0,0,0,0,0,0,0,0,0,0,0,instance
-'Tournament',0,0,0,0,0,0,0,0,0,0,0,class
-'Tower',0,0,0,0,0,0,0,0,0,0,0,class
-'Town',0,0,0,0,0,0,0,0,0,0,0,class
-'Trade union',0,0,0,0,0,0,0,0,0,0,0,class
-'Equity (trade union)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Train',0,0,0,0,0,0,0,0,0,0,0,class
-'Bacillus',0,0,0,0,0,0,0,0,0,0,0,instance
-'787 series',0,0,0,0,0,0,0,0,0,1,0,instance
-'Tunnel',0,0,0,0,0,0,0,0,0,0,0,class
-'INDECT',0,0,0,0,0,0,0,0,0,0,0,instance
-'University',0,0,0,0,0,0,0,0,0,0,0,class
-'Valley',0,0,0,0,0,0,0,0,0,0,0,class
-'Grand Valley (Colorado)',1,0,0,0,0,0,0,1,0,1,0,instance
-'Vein',0,0,0,0,0,0,0,0,0,0,0,class
-'Azygos vein',0,0,0,0,0,0,0,0,0,0,0,instance
-'Venue',0,0,0,0,0,0,0,0,0,0,0,class
-'Video game',0,0,0,0,0,0,0,0,0,0,0,class
-'Asteroids (video game)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Midwest Electronic Gaming',0,0,1,0,0,0,0,1,0,0,0,instance
-'Village',0,0,0,0,0,0,0,0,0,0,0,class
-'Antonius Ariantho',0,0,0,0,0,0,0,1,0,0,0,instance
-'Brazilian Men\'s Volleyball Superliga',0,0,0,0,0,0,0,1,0,1,0,instance
-'Dio Lequaglie',0,0,0,0,0,0,0,1,0,0,0,instance
-'Band',0,0,0,0,0,0,0,0,0,0,0,class
-'Mammoth (ride)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Chirk Tunnel',0,0,0,0,0,0,0,1,0,0,0,instance
-'Website',0,0,0,0,0,0,0,0,0,0,0,class
-'Darwin Awards',0,0,0,0,0,0,0,1,1,0,0,instance
-'Grand Valley AVA',0,0,0,0,0,0,0,1,0,0,0,instance
-'Winery',0,0,0,0,0,0,0,0,0,0,0,class
-'Gilbert (band)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Gundlach Bundschu',0,1,0,0,0,0,0,1,0,0,0,instance
-'Work',0,0,0,0,0,0,0,0,0,0,0,class
-'...Baby One More Time (album)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Antonio Thomas (wrestler)',0,0,0,0,0,0,0,0,0,1,0,instance
-'DGUSA Fearless',0,0,0,0,0,0,0,1,1,0,0,instance
-'Year',0,0,0,0,0,0,0,0,0,0,0,class
-'2" ',0,0,0,0,0,0,0,0,0,1,0,instance
-'ARY Group',0,0,1,0,0,0,0,1,0,0,0,instance
-'1993 in spaceflight',0,0,0,0,0,0,0,0,0,1,0,instance
-'Activity',0,0,0,0,0,0,0,0,0,0,0,class
-'Acquire',0,0,0,0,0,0,0,0,0,0,0,instance
-'Name',0,0,0,0,0,0,0,0,0,0,0,class
-'Adrian',0,0,0,0,0,0,0,0,0,0,0,instance
-'Aa (architect)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Baronet',0,0,0,0,0,0,0,0,0,0,0,class
-'Dawson (actor)',0,0,0,0,0,0,0,0,0,1,0,instance
-'Place',0,0,0,0,0,0,0,0,0,0,0,class
-'DC Comics',0,0,0,0,0,0,0,1,1,0,0,instance
-'A cappella',0,0,0,0,0,0,0,0,0,0,0,instance
-'Agent',0,0,0,0,0,0,0,0,0,0,0,class
-'AOL Instant Messenger',0,0,0,0,0,0,0,1,0,0,0,instance
-'Rock Bridge High School',0,0,0,0,0,0,0,1,0,0,0,instance
-'Lewis (baseball)',0,0,0,0,0,0,0,0,0,1,0,instance
-'1990 International League season',0,0,1,0,0,1,0,0,0,1,0,instance
-'Arizona Diamondbacks',0,0,1,0,0,0,0,1,1,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,4,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,80,0,1,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,5,0,1,class
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,3,0,1,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,10,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,11,0,1,class
+1,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,2,0,0,class
+0,0,1,0,0,0,0,1,1,0,0,0,1,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,3,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,87,0,1,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,1,6,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,4,0,1,class
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,270,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,2,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,26789,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,4,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,8638,0,1,class
+1,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,1,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,96,0,0,class
+1,0,1,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,1,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+1,0,0,0,0,0,0,0,0,0,1,2,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,1,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,1,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,1,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,15,0,1,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,17,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,1,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,3,0,1,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,6,0,0,class
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,1,0,0,class
+0,0,1,0,0,0,0,1,1,0,0,0,1,0,instance
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,2,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,2,0,1,class
+0,0,0,0,0,0,0,0,1,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,2,0,0,class
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,1,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,4,0,1,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,6,0,1,class
+0,0,1,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,22,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,5,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,197,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,1,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,3,0,1,class
+0,0,0,0,0,1,0,1,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,35,0,1,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,1,0,1,0,0,0,0,instance
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,123,0,1,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,12,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,160,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,1,0,0,0,1,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,1,class
+0,1,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,198,0,1,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,8,0,0,class
+0,0,1,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,1,class
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,33,0,1,class
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,5,0,1,class
+1,0,0,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,class
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,64,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,1,2793,0,0,class
+1,0,0,0,0,0,0,1,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,1,0,1,0,0,0,instance
+0,0,0,0,0,0,0,1,1,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,2,0,1,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,1,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,1,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,1,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,0,0,0,0,0,1,0,instance
+0,0,1,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,20,0,1,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,1,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,1,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,20,0,1,class
+0,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,1,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,518,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,2,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,1,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,1,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,3085,0,1,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,1,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,10,0,1,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,1,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,1,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,1,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,29,0,1,class
+0,0,0,0,0,0,0,1,1,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,3,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,instance
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,2,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,8,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,7,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,4,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,87,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,2,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,61,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,4,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,41,0,0,class
+1,0,0,0,0,0,0,1,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,53,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,221,0,1,class
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,8,0,1,class
+1,0,0,0,0,0,0,1,0,1,0,3,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,1,0,0,1,0,instance
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,3,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,1,0,3,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,2,0,0,class
+0,0,1,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,41,0,1,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,45,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,1,0,0,0,0,1,0,0,0,93,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,40,0,1,class
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,1,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,394,0,1,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,1,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,22,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,2,0,0,instance
+0,0,0,0,0,0,0,0,1,0,0,0,0,0,class
+0,0,0,0,0,1,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,10,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,0,1,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,267,0,1,class
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+1,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,1,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,1,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,3,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,1,133,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,1,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,1,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,19,0,1,class
+1,0,0,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,6769,0,1,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,7,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,1,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,8,0,1,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,76,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,12,0,1,class
+1,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,26,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,53832,0,1,class
+1,0,0,0,0,0,0,1,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,0,0,instance
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,76,0,1,class
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,1,0,0,class
+0,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,24,0,0,class
+0,0,0,0,0,0,0,1,1,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,2,0,1,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,1,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,1,0,0,0,0,0,0,1,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,1,0,0,0,1,0,0,class
+1,0,0,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,40,0,1,class
+0,0,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,1,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,1,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,1,0,0,0,1,instance
+0,0,0,0,0,0,0,0,0,0,0,28,0,1,class
+0,0,1,0,0,0,0,1,1,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+1,0,0,0,0,0,0,1,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,1,1,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,1,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,2,0,0,class
+0,0,0,0,0,0,0,0,0,0,1,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,7,0,0,class
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,1,0,0,0,0,0,0,0,1,0,0,1,0,instance
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,15,0,1,class
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,0,0,0,0,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,1,0,0,0,1,0,0,0,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class
+0,0,1,0,0,0,0,1,1,0,0,0,1,0,instance
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,class

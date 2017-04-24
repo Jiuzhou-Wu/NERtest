@@ -30,7 +30,7 @@ public class CallNER {
 		        if (Files.isRegularFile(filePath)) {
 		            try {
 						List<String> s = Files.readAllLines(filePath, Charset.forName("UTF-8"));
-						System.out.println(filePath);
+						//System.out.println(filePath);
 						String title = s.get(1);
 						String type = s.get(2);
 						String abs = "EmptyAbs";
@@ -58,14 +58,16 @@ public class CallNER {
     	plural = checkStructure(content, tagger, abstracts);
     	
     	List<String> dbFea = DbpediaData.dbFeature(content);
-    	System.out.println(content.size());
+    	//System.out.println(content.size());
+    	
+    	List<String> pattern = patternCheck(abstracts,tagger);
     	
     	StanfordNER ner = new StanfordNER();
 		String classifier = "lib\\classifiers\\english.muc.7class.distsim.crf.ser.gz";
 		
 		Path file = Paths.get("lib\\Result\\Res.arff");
 		ArrayList<LinkedHashMap<String,LinkedHashSet<String>>> map = ner.identify(content, classifier);
-		Files.write(file, ner.toString(map,content,plural,typeList,dbFea), Charset.forName("UTF-8"));
+		Files.write(file, ner.toString(map,content,plural,typeList,dbFea, pattern), Charset.forName("UTF-8"));
 	}
 	
 	public static List<String> checkStructure(List<String> content, MaxentTagger tagger, List<String> absL) throws IOException, TreeTaggerException{
@@ -194,5 +196,51 @@ public class CallNER {
     	
 		return res;
 	}
-
+	
+	public static List<String> patternCheck(List<String> absL, MaxentTagger tagger){
+		List<String> pat = new ArrayList<String>();
+		for(int i=0;i<absL.size();i++){
+    		String abs = absL.get(i);
+    		String res = "";
+    		String pattern = "";
+    		int end = abs.indexOf(".");
+    		if(end >0){
+    			abs = abs.substring(0, end);
+    			//System.out.println(abs);
+    			String[] words = tagger.tagString(abs).split("\\s+");
+    			for(int j=0;j<words.length;j++){
+    				String temp = words[j];
+    				temp = temp.substring(temp.lastIndexOf("_")+1, temp.length());
+    				res = res + temp + " ";
+    			}
+    		}
+    		else{
+    			//System.out.println(abs);
+    			String[] words = tagger.tagString(abs).split("\\s+");
+    			for(int j=0;j<words.length;j++){
+    				String temp = words[j];
+    				//System.out.println(temp);
+    				temp = temp.substring(temp.lastIndexOf("_")+1, temp.length());
+    				res = res + temp + " ";
+    			}
+    		}
+    		
+    		if(res.startsWith("NNP NNP") || res.startsWith("NNP NNP NNP") || res.startsWith("DT NNP NNP") || res.startsWith("DT NN NNP")){
+    			pattern = pattern + "1,";
+    		}
+    		else{
+    			pattern = pattern + "0,";
+    		}
+    		
+    		if(res.startsWith("DT NN VBZ")){
+    			pattern = pattern + "1,";
+    		}
+    		else{
+    			pattern = pattern + "0,";
+    		}
+    		
+    		pat.add(pattern);
+    	}
+		return pat;
+	}
 }
