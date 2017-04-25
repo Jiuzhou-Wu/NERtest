@@ -1,0 +1,4 @@
+
+Occam (programming language)
+instance
+occam is a concurrent programming language that builds on the communicating sequential processes (CSP) process algebra, and shares many of its features. It is named after William of Ockham of Occam's Razor fame. occam is an imperative procedural language (such as Pascal). It was developed by David May and others at INMOS, advised by Tony Hoare, as the native programming language for their transputer microprocessors, but implementations for other platforms are available. The most widely known version is occam 2; its programming manual was written by Steven Ericsson-Zenith and others at INMOS.
