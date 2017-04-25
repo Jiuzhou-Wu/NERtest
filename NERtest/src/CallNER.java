@@ -24,7 +24,9 @@ public class CallNER {
 		ArrayList<String> content = new ArrayList<String>();
 		List<String> typeList = new ArrayList<String>();
 		List<String> abstracts = new ArrayList<String>();
-		
+		/*content.add("A B C");
+		typeList.add("instance");
+		abstracts.add("this is a test");*/
 		try(Stream<Path> paths = Files.walk(Paths.get("lib\\data"))) {
 		    paths.forEach(filePath -> {
 		        if (Files.isRegularFile(filePath)) {

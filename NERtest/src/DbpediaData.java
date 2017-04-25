@@ -198,10 +198,6 @@ public class DbpediaData
     	ArrayList<String> resultList = new ArrayList<String>(titles.size());
 //    	String totalCount = "0";
     	
-    	for(int i = 0; i < titles.size(); i++){
-    		System.out.println(titles.get(i));
-    	}
-    	
     	for(int i = 0; i<titles.size(); i++){
     		for(int j = 0; j<titles.get(i).length(); j++){
     			if(titles.get(i).charAt(j)=='\"'){
@@ -212,11 +208,7 @@ public class DbpediaData
     		titles.set(i, titles.get(i).replace('\"', ' '));
     		resultList.add(i, dbFeatureSingle(titles.get(i).replace(' ', '_')));
     	}
-    	
-    	for(int i = 0; i < titles.size(); i++){
-    		System.out.println(titles.get(i));
-    	}
-    	
+    	 	
     	return resultList;
     }
     

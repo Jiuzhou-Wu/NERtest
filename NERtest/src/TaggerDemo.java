@@ -46,9 +46,11 @@ public class TaggerDemo {
     	String model = "lib\\models\\wsj-0-18-bidirectional-nodistsim.tagger";
     	MaxentTagger tagger = new MaxentTagger(model);
     	
+    	
     	List<String> cls = new ArrayList<String>();
     	List<String> ins = new ArrayList<String>();
     	List<String> pat = new ArrayList<String>();
+
     	//System.out.println(abstracts.get(3));
     	for(int i=0;i<content.size();i++){
     		String abs = abstracts.get(i);
@@ -79,13 +81,13 @@ public class TaggerDemo {
     		}else{
     			ins.add(res);
     			
-    			if(ins.indexOf(res)==93){
+    			/*if(ins.indexOf(res)==93){
     				System.out.println(abstracts.get(i));
-    			}
+    			}*/
     		}
     		pat.add(res);
     	}
-    	System.out.println(abstracts.get(533));
+    	//System.out.println(abstracts.get(533));
     	Path file = Paths.get("lib\\Result\\patternClass");
 		Files.write(file, cls, Charset.forName("UTF-8"));
 		Path file2 = Paths.get("lib\\Result\\patternInstance");
