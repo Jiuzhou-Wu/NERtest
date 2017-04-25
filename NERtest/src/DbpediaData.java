@@ -199,10 +199,7 @@ public class DbpediaData
     	
     	for(int i = 0; i<titles.size(); i++){
     		for(int j = 0; j<titles.get(i).length(); j++){
-    			if(titles.get(i).charAt(j)=='\"'){
-    				titles.set(i, titles.get(i).replace(" ", "_"));
-				
-    			}
+    			titles.set(i, titles.get(i).replace(" ", "_"));
     		}
     		titles.set(i, titles.get(i).replace('\"', ' '));
     		resultList.add(i, dbFeatureSingle(titles.get(i)));
