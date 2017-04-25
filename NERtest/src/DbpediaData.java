@@ -23,6 +23,7 @@ public class DbpediaData
     {
     	
 //    	dbFeatureSingle("`Abdu'l-Bah¨¢");
+    	
     	testData();
 
 //    	DbData(1000);
@@ -122,6 +123,7 @@ public class DbpediaData
     
     
     public static void testData() throws IOException{
+    	System.out.println("something");
     	int size = 10000;
     	List<String> content = new ArrayList<String>();
     	try(Stream<Path> paths = Files.walk(Paths.get("lib/WekiPages"))) {
@@ -161,7 +163,8 @@ public class DbpediaData
       	    		File file = new File("lib/data/c_" + numOfClass++);
       	    		toWrite = new ArrayList<String>();
         			toWrite.add("");
-        			toWrite.add(title);
+        			toWrite.add(title.replace('_', ' '));
+        			
         			toWrite.add("class");
                 	toWrite.add(DbDataClassAbstractHelper(title, false));
                 	Files.write(file.toPath(), toWrite, Charset.forName("UTF-8"));
@@ -170,14 +173,14 @@ public class DbpediaData
       	    		File file = new File("lib/data/i_" + numOfInstance++);
       	    		toWrite = new ArrayList<String>();
         			toWrite.add("");
-        			toWrite.add(title);
+        			toWrite.add(title.replace('_', ' '));
         			toWrite.add("instance");
                 	toWrite.add(DbDataClassAbstractHelper(title, false));
                 	Files.write(file.toPath(), toWrite, Charset.forName("UTF-8"));
                 	toWrite.clear();
       	    	}
-      	    	System.out.println("" + i + "/" + Math.min(size, content.size()) + " done; numOfClass:    " + numOfClass);
-      	    	System.out.println("" + i + "/" + Math.min(size, content.size()) + " done; numOfInstance: " + numOfInstance);
+//      	    	System.out.println("" + i + "/" + Math.min(size, content.size()) + " done; numOfClass:    " + numOfClass);
+//      	    	System.out.println("" + i + "/" + Math.min(size, content.size()) + " done; numOfInstance: " + numOfInstance);
       	    } 
       	    
         	
