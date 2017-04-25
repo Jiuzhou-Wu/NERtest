@@ -24,10 +24,12 @@ public class DbpediaData
     	
 //    	dbFeatureSingle("`Abdu'l-Bah¨¢");
     	
-    	testData();
+//    	testData();
 
 //    	DbData(1000);
-//    	Test.test();
+    	Test.test();
+    	
+    	
     	
     }
     
@@ -196,16 +198,24 @@ public class DbpediaData
     	ArrayList<String> resultList = new ArrayList<String>(titles.size());
 //    	String totalCount = "0";
     	
+    	for(int i = 0; i < titles.size(); i++){
+    		System.out.println(titles.get(i));
+    	}
     	
     	for(int i = 0; i<titles.size(); i++){
     		for(int j = 0; j<titles.get(i).length(); j++){
-    			titles.set(i, titles.get(i).replace(" ", "_"));
+    			if(titles.get(i).charAt(j)=='\"'){
+    				
+				
+    			}
     		}
     		titles.set(i, titles.get(i).replace('\"', ' '));
-    		resultList.add(i, dbFeatureSingle(titles.get(i)));
+    		resultList.add(i, dbFeatureSingle(titles.get(i).replace(' ', '_')));
     	}
     	
-    	
+    	for(int i = 0; i < titles.size(); i++){
+    		System.out.println(titles.get(i));
+    	}
     	
     	return resultList;
     }
